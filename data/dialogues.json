@@ -1,0 +1,708 @@
+{
+  "dev": [
+    {
+      "domain": "cooking",
+      "id": "v2-dev-cooking-01",
+      "topic": "keeping a salad crisp while preparing lunch for several friends",
+      "turns": [
+        "Please give practical advice about keeping a salad crisp while preparing lunch for several friends. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-dev-cooking-02",
+      "topic": "arranging a small kitchen counter before making a vegetable wrap",
+      "turns": [
+        "Please give practical advice about arranging a small kitchen counter before making a vegetable wrap. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-dev-cooking-03",
+      "topic": "preparing a simple breakfast with oats, yogurt and berries",
+      "turns": [
+        "Please give practical advice about preparing a simple breakfast with oats, yogurt and berries. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-dev-cooking-04",
+      "topic": "carrying homemade soup to a shared lunch without spilling it",
+      "turns": [
+        "Please give practical advice about carrying homemade soup to a shared lunch without spilling it. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-dev-cooking-05",
+      "topic": "using leftover roasted vegetables in a quick weekday meal",
+      "turns": [
+        "Please give practical advice about using leftover roasted vegetables in a quick weekday meal. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-dev-outdoors-01",
+      "topic": "organizing a campsite so cooking supplies and sleeping gear stay tidy",
+      "turns": [
+        "Please give practical advice about organizing a campsite so cooking supplies and sleeping gear stay tidy. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-dev-outdoors-02",
+      "topic": "choosing a comfortable spot to rest during a family hike",
+      "turns": [
+        "Please give practical advice about choosing a comfortable spot to rest during a family hike. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-dev-outdoors-03",
+      "topic": "keeping socks and spare clothes dry on a rainy walking trip",
+      "turns": [
+        "Please give practical advice about keeping socks and spare clothes dry on a rainy walking trip. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-dev-outdoors-04",
+      "topic": "planning a short nature trail visit with an inexperienced friend",
+      "turns": [
+        "Please give practical advice about planning a short nature trail visit with an inexperienced friend. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-dev-outdoors-05",
+      "topic": "setting up a tarp for shelter during a breezy afternoon",
+      "turns": [
+        "Please give practical advice about setting up a tarp for shelter during a breezy afternoon. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-dev-workshop-01",
+      "topic": "measuring and marking a picture frame before hanging it level",
+      "turns": [
+        "Please give practical advice about measuring and marking a picture frame before hanging it level. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-dev-workshop-02",
+      "topic": "repairing a loose handle on a drawer with basic hand tools",
+      "turns": [
+        "Please give practical advice about repairing a loose handle on a drawer with basic hand tools. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-dev-workshop-03",
+      "topic": "building a cardboard organizer for pencils and craft supplies",
+      "turns": [
+        "Please give practical advice about building a cardboard organizer for pencils and craft supplies. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-dev-workshop-04",
+      "topic": "protecting a tabletop while painting a small wooden box",
+      "turns": [
+        "Please give practical advice about protecting a tabletop while painting a small wooden box. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-dev-workshop-05",
+      "topic": "choosing sandpaper and a safe work sequence for smoothing a rough edge",
+      "turns": [
+        "Please give practical advice about choosing sandpaper and a safe work sequence for smoothing a rough edge. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-dev-science-01",
+      "topic": "building a simple paper bridge to explore how folds change stiffness",
+      "turns": [
+        "Please give practical advice about building a simple paper bridge to explore how folds change stiffness. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-dev-science-02",
+      "topic": "demonstrating balance with a ruler and small identical weights",
+      "turns": [
+        "Please give practical advice about demonstrating balance with a ruler and small identical weights. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-dev-science-03",
+      "topic": "comparing how quickly two damp cloths dry in moving and still air",
+      "turns": [
+        "Please give practical advice about comparing how quickly two damp cloths dry in moving and still air. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-dev-science-04",
+      "topic": "using a flashlight and a mirror to explain reflection",
+      "turns": [
+        "Please give practical advice about using a flashlight and a mirror to explain reflection. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-dev-science-05",
+      "topic": "testing how container shape changes the sound of tapping with a pencil",
+      "turns": [
+        "Please give practical advice about testing how container shape changes the sound of tapping with a pencil. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-dev-storytelling-01",
+      "topic": "writing a short story about a misplaced umbrella and a helpful neighbor",
+      "turns": [
+        "Please give practical advice about writing a short story about a misplaced umbrella and a helpful neighbor. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-dev-storytelling-02",
+      "topic": "using a familiar household object to explain why practice improves a skill",
+      "turns": [
+        "Please give practical advice about using a familiar household object to explain why practice improves a skill. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-dev-storytelling-03",
+      "topic": "inventing a gentle bedtime story about a toy finding its way home",
+      "turns": [
+        "Please give practical advice about inventing a gentle bedtime story about a toy finding its way home. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-dev-storytelling-04",
+      "topic": "explaining a difficult choice through a simple packing-for-a-trip analogy",
+      "turns": [
+        "Please give practical advice about explaining a difficult choice through a simple packing-for-a-trip analogy. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-dev-gardening-01",
+      "topic": "checking whether a houseplant needs water without making a mess",
+      "turns": [
+        "Please give practical advice about checking whether a houseplant needs water without making a mess. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-dev-gardening-02",
+      "topic": "preparing a small balcony corner for tidy plant care",
+      "turns": [
+        "Please give practical advice about preparing a small balcony corner for tidy plant care. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-dev-gardening-03",
+      "topic": "cleaning a watering can and storing garden gloves after use",
+      "turns": [
+        "Please give practical advice about cleaning a watering can and storing garden gloves after use. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-dev-gardening-04",
+      "topic": "supporting a tall indoor plant with a simple stake and soft ties",
+      "turns": [
+        "Please give practical advice about supporting a tall indoor plant with a simple stake and soft ties. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-dev-wellness-01",
+      "topic": "planning short movement breaks during a day of standing and sitting",
+      "turns": [
+        "Please give practical advice about planning short movement breaks during a day of standing and sitting. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-dev-wellness-02",
+      "topic": "carrying two shopping bags comfortably for a short walk",
+      "turns": [
+        "Please give practical advice about carrying two shopping bags comfortably for a short walk. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-dev-wellness-03",
+      "topic": "setting a gentle pace for a beginner walking routine in a park",
+      "turns": [
+        "Please give practical advice about setting a gentle pace for a beginner walking routine in a park. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-dev-wellness-04",
+      "topic": "positioning a cushion and a book for relaxed reading",
+      "turns": [
+        "Please give practical advice about positioning a cushion and a book for relaxed reading. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    }
+  ],
+  "heldout": [
+    {
+      "domain": "cooking",
+      "id": "v2-heldout-cooking-06",
+      "topic": "organizing a relaxed outdoor tea break with reusable cups",
+      "turns": [
+        "Please give practical advice about organizing a relaxed outdoor tea break with reusable cups. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-heldout-cooking-07",
+      "topic": "cooling and storing a freshly prepared pasta dish safely",
+      "turns": [
+        "Please give practical advice about cooling and storing a freshly prepared pasta dish safely. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-heldout-cooking-08",
+      "topic": "preparing a colorful snack tray with apples, carrots and a dip",
+      "turns": [
+        "Please give practical advice about preparing a colorful snack tray with apples, carrots and a dip. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "cooking",
+      "id": "v2-heldout-cooking-09",
+      "topic": "cleaning a sticky chopping board and utensils after baking cookies",
+      "turns": [
+        "Please give practical advice about cleaning a sticky chopping board and utensils after baking cookies. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-heldout-outdoors-06",
+      "topic": "packing a thermos and sandwiches for a cool-weather park visit",
+      "turns": [
+        "Please give practical advice about packing a thermos and sandwiches for a cool-weather park visit. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-heldout-outdoors-07",
+      "topic": "checking a bicycle and helmet before a gentle countryside ride",
+      "turns": [
+        "Please give practical advice about checking a bicycle and helmet before a gentle countryside ride. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-heldout-outdoors-08",
+      "topic": "finding a safe route around a muddy section of a footpath",
+      "turns": [
+        "Please give practical advice about finding a safe route around a muddy section of a footpath. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-heldout-outdoors-09",
+      "topic": "cleaning and drying a backpack and boots after a weekend trip",
+      "turns": [
+        "Please give practical advice about cleaning and drying a backpack and boots after a weekend trip. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-heldout-workshop-06",
+      "topic": "keeping screws and washers sorted during a simple furniture repair",
+      "turns": [
+        "Please give practical advice about keeping screws and washers sorted during a simple furniture repair. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-heldout-workshop-07",
+      "topic": "making a sturdy paper model with scissors, folds and glue",
+      "turns": [
+        "Please give practical advice about making a sturdy paper model with scissors, folds and glue. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-heldout-workshop-08",
+      "topic": "wrapping a fragile ceramic ornament for a short move",
+      "turns": [
+        "Please give practical advice about wrapping a fragile ceramic ornament for a short move. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-heldout-workshop-09",
+      "topic": "setting up a comfortable station for sewing a loose button",
+      "turns": [
+        "Please give practical advice about setting up a comfortable station for sewing a loose button. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-heldout-science-06",
+      "topic": "observing how colored water spreads through folded paper",
+      "turns": [
+        "Please give practical advice about observing how colored water spreads through folded paper. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-heldout-science-07",
+      "topic": "explaining why a rolling toy slows down on a soft rug",
+      "turns": [
+        "Please give practical advice about explaining why a rolling toy slows down on a soft rug. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-heldout-science-08",
+      "topic": "making a safe classroom demonstration of floating and sinking",
+      "turns": [
+        "Please give practical advice about making a safe classroom demonstration of floating and sinking. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-heldout-science-09",
+      "topic": "comparing shadows made by a flashlight at several distances",
+      "turns": [
+        "Please give practical advice about comparing shadows made by a flashlight at several distances. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-heldout-storytelling-05",
+      "topic": "creating a friendly story about two people building something together",
+      "turns": [
+        "Please give practical advice about creating a friendly story about two people building something together. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-heldout-storytelling-06",
+      "topic": "describing a cozy room using concrete details rather than abstract praise",
+      "turns": [
+        "Please give practical advice about describing a cozy room using concrete details rather than abstract praise. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-heldout-storytelling-07",
+      "topic": "explaining patience with an everyday craft or household example",
+      "turns": [
+        "Please give practical advice about explaining patience with an everyday craft or household example. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-heldout-storytelling-08",
+      "topic": "writing a playful scene about a pair of mismatched gloves",
+      "turns": [
+        "Please give practical advice about writing a playful scene about a pair of mismatched gloves. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-heldout-storytelling-09",
+      "topic": "using a small repair project as an analogy for solving a complicated problem",
+      "turns": [
+        "Please give practical advice about using a small repair project as an analogy for solving a complicated problem. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-heldout-gardening-00",
+      "topic": "arranging a few potted herbs on a bright windowsill",
+      "turns": [
+        "Please give practical advice about arranging a few potted herbs on a bright windowsill. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-heldout-gardening-05",
+      "topic": "keeping freshly washed towels and bedding neatly aired indoors",
+      "turns": [
+        "Please give practical advice about keeping freshly washed towels and bedding neatly aired indoors. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-heldout-gardening-06",
+      "topic": "choosing a practical place for a doormat and an umbrella stand",
+      "turns": [
+        "Please give practical advice about choosing a practical place for a doormat and an umbrella stand. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-heldout-gardening-07",
+      "topic": "repotting a small houseplant while protecting the floor",
+      "turns": [
+        "Please give practical advice about repotting a small houseplant while protecting the floor. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-heldout-gardening-08",
+      "topic": "planning a gentle weekend routine for dusting shelves and caring for plants",
+      "turns": [
+        "Please give practical advice about planning a gentle weekend routine for dusting shelves and caring for plants. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "gardening",
+      "id": "v2-heldout-gardening-09",
+      "topic": "using baskets and trays to make a shared entryway easier to keep tidy",
+      "turns": [
+        "Please give practical advice about using baskets and trays to make a shared entryway easier to keep tidy. Use a short, concrete explanation.",
+        "What everyday materials should I prepare and what should I do first?",
+        "What visible sign would tell me to adjust the routine?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-heldout-wellness-05",
+      "topic": "choosing a stable place and simple equipment for a light stretching break",
+      "turns": [
+        "Please give practical advice about choosing a stable place and simple equipment for a light stretching break. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-heldout-wellness-06",
+      "topic": "organizing a quiet wind-down routine with dim lighting and comfortable seating",
+      "turns": [
+        "Please give practical advice about organizing a quiet wind-down routine with dim lighting and comfortable seating. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-heldout-wellness-07",
+      "topic": "checking the fit and comfort of a backpack before a walk",
+      "turns": [
+        "Please give practical advice about checking the fit and comfort of a backpack before a walk. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-heldout-wellness-08",
+      "topic": "alternating light household tasks with sensible rest breaks",
+      "turns": [
+        "Please give practical advice about alternating light household tasks with sensible rest breaks. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-heldout-wellness-09",
+      "topic": "arranging a clear, comfortable floor space for easy movement exercises",
+      "turns": [
+        "Please give practical advice about arranging a clear, comfortable floor space for easy movement exercises. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "domain": "cooking",
+      "id": "v2-practice-cooking-00",
+      "topic": "packing hummus, crackers and sliced fruit for a picnic in a shaded garden",
+      "turns": [
+        "Please give practical advice about packing hummus, crackers and sliced fruit for a picnic in a shaded garden. Use a short, concrete explanation.",
+        "Which ordinary items should I lay out first, and in what order should I use them?",
+        "Describe one likely practical mistake and a simple way to avoid it."
+      ]
+    },
+    {
+      "domain": "outdoors",
+      "id": "v2-practice-outdoors-00",
+      "topic": "packing a small daypack for a woodland walk in changeable weather",
+      "turns": [
+        "Please give practical advice about packing a small daypack for a woodland walk in changeable weather. Use a short, concrete explanation.",
+        "What should I check or pack first, using a few concrete examples?",
+        "How should I adjust the plan if the weather or available space changes?"
+      ]
+    },
+    {
+      "domain": "workshop",
+      "id": "v2-practice-workshop-00",
+      "topic": "organizing a workbench before assembling a small wooden shelf",
+      "turns": [
+        "Please give practical advice about organizing a workbench before assembling a small wooden shelf. Use a short, concrete explanation.",
+        "Describe the order of the first few hands-on steps and the supplies needed.",
+        "How can I check the result safely before considering the task finished?"
+      ]
+    },
+    {
+      "domain": "science",
+      "id": "v2-practice-science-00",
+      "topic": "showing friction with toy blocks sliding on different surfaces",
+      "turns": [
+        "Please give practical advice about showing friction with toy blocks sliding on different surfaces. Use a short, concrete explanation.",
+        "What observations should learners compare, and what would count as a fair test?",
+        "Explain the result in everyday language with a short concrete example."
+      ]
+    },
+    {
+      "domain": "storytelling",
+      "id": "v2-practice-storytelling-00",
+      "topic": "explaining teamwork with an everyday example involving a shared cooking task",
+      "turns": [
+        "Please give practical advice about explaining teamwork with an everyday example involving a shared cooking task. Use a short, concrete explanation.",
+        "Add two specific sensory or physical details that make the example easy to picture.",
+        "Make the ending or explanation clearer while keeping the tone friendly."
+      ]
+    },
+    {
+      "domain": "wellness",
+      "id": "v2-practice-wellness-00",
+      "topic": "arranging a chair, desk and footrest for a comfortable reading session",
+      "turns": [
+        "Please give practical advice about arranging a chair, desk and footrest for a comfortable reading session. Use a short, concrete explanation.",
+        "Describe a gentle, practical setup and one comfort check I can do myself.",
+        "How can I adapt this if I have little space or only a few minutes?"
+      ]
+    }
+  ]
+}

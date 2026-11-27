@@ -1,0 +1,322 @@
+{
+  "dev": [
+    {
+      "category": "transport",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "r4-pair-024",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.013159625192590951,
+      "word_1": "rocket",
+      "word_2": "truck"
+    },
+    {
+      "category": "food",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "r4-pair-015",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.2954485672899345,
+      "word_1": "honey",
+      "word_2": "turkey"
+    },
+    {
+      "category": "anatomy",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-003",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.23520788545639526,
+      "word_1": "ear",
+      "word_2": "stomach"
+    },
+    {
+      "category": "anatomy",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-005",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.06139374946113918,
+      "word_1": "cheek",
+      "word_2": "skull"
+    }
+  ],
+  "heldout": [
+    {
+      "category": "precious_stones",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-006",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.15846275558897283,
+      "word_1": "pearl",
+      "word_2": "ruby"
+    },
+    {
+      "category": "vegetables",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "r3-pair-024",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.31119914901381307,
+      "word_1": "potato",
+      "word_2": "tomato"
+    },
+    {
+      "category": "food",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-014",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.19589629607323822,
+      "word_1": "bread",
+      "word_2": "cake"
+    },
+    {
+      "category": "marine_animals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-016",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.3359986837887039,
+      "word_1": "clam",
+      "word_2": "whale"
+    },
+    {
+      "category": "metals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "r3-pair-018",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.204356695424746,
+      "word_1": "magnesium",
+      "word_2": "nickel"
+    },
+    {
+      "category": "mammals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-017",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.25642437533884,
+      "word_1": "cat",
+      "word_2": "horse"
+    },
+    {
+      "category": "marine_animals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-019",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.2280849001820897,
+      "word_1": "coral",
+      "word_2": "crab"
+    },
+    {
+      "category": "transport",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-020",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.4154698947957467,
+      "word_1": "bus",
+      "word_2": "train"
+    },
+    {
+      "category": "plants",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-024",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.49464473611164017,
+      "word_1": "pine",
+      "word_2": "rose"
+    },
+    {
+      "category": "mammals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-025",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.3924593477650351,
+      "word_1": "cow",
+      "word_2": "rat"
+    },
+    {
+      "category": "food",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-029",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.39308628218455866,
+      "word_1": "beef",
+      "word_2": "cheese"
+    },
+    {
+      "category": "transport",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-030",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.174805085458404,
+      "word_1": "submarine",
+      "word_2": "subway"
+    }
+  ],
+  "reserve": [
+    {
+      "category": "geography",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-031",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.0549663485448626,
+      "word_1": "cave",
+      "word_2": "valley"
+    },
+    {
+      "category": "anatomy",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-032",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.4730940753039725,
+      "word_1": "toe",
+      "word_2": "tongue"
+    },
+    {
+      "category": "mammals",
+      "forms_1": [],
+      "forms_2": [
+        "sheep"
+      ],
+      "id": "v2-r2-pair-035",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.43197423301177373,
+      "word_1": "lion",
+      "word_2": "sheep"
+    },
+    {
+      "category": "anatomy",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-038",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.06201262320374923,
+      "word_1": "kidney",
+      "word_2": "liver"
+    },
+    {
+      "category": "metals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r2-pair-042",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.21605241488116533,
+      "word_1": "aluminum",
+      "word_2": "tin"
+    },
+    {
+      "category": "geography",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r3-pair-000",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.3804996484308081,
+      "word_1": "canyon",
+      "word_2": "glacier"
+    },
+    {
+      "category": "geography",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r3-pair-001",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.09026332995404296,
+      "word_1": "lake",
+      "word_2": "sea"
+    },
+    {
+      "category": "anatomy",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r3-pair-002",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.05973005285463273,
+      "word_1": "ankle",
+      "word_2": "lip"
+    },
+    {
+      "category": "metals",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r3-pair-003",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.2674826117569573,
+      "word_1": "copper",
+      "word_2": "gold"
+    },
+    {
+      "category": "vegetables",
+      "forms_1": [],
+      "forms_2": [],
+      "id": "v2-r3-pair-004",
+      "pass": true,
+      "reasons": [],
+      "recall_rewrite": false,
+      "unigram_gap": 0.051654566657218126,
+      "word_1": "cabbage",
+      "word_2": "lettuce"
+    }
+  ]
+}

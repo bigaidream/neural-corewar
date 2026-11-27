@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neural-corewar"
+version = "1.0.0"
+description = "Neural Core War: ANDer's Game"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [
+  {name = "Jie Fu"},
+  {name = "Xuhan Huang"},
+  {name = "Yawen Duan"},
+  {name = "Bryan Dai"},
+]
+
+[project.urls]
+Homepage = "https://bigaidream.github.io/neural-corewar/"
+Repository = "https://github.com/bigaidream/neural-corewar"
+dependencies = [
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+gpu = [
+  "torch>=2.2",
+  "transformers>=4.45",
+  "accelerate>=0.30",
+  "safetensors>=0.4",
+]
+dev = [
+  "pytest>=7.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["cwllm*"]

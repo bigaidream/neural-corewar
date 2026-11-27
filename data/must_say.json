@@ -1,0 +1,730 @@
+{
+  "aluminum": {
+    "clue": "the lightweight metal whose chemical symbol is Al, commonly used in beverage cans",
+    "prompts": [
+      "Which metal or alloy fits this description: the lightweight metal whose chemical symbol is Al, commonly used in beverage cans? Give its common English name.",
+      "What is the metal or alloy described as the lightweight metal whose chemical symbol is Al, commonly used in beverage cans? Answer briefly.",
+      "Identify this metal or alloy: the lightweight metal whose chemical symbol is Al, commonly used in beverage cans.",
+      "What is the common name for the lightweight metal whose chemical symbol is Al, commonly used in beverage cans?",
+      "Here are facts about a metal or alloy: the lightweight metal whose chemical symbol is Al, commonly used in beverage cans. What is its name?",
+      "Please name this metal or alloy: the lightweight metal whose chemical symbol is Al, commonly used in beverage cans.",
+      "Which metal or alloy am I describing? It is the lightweight metal whose chemical symbol is Al, commonly used in beverage cans.",
+      "What do we call the lightweight metal whose chemical symbol is Al, commonly used in beverage cans? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "ankle": {
+    "clue": "the joint that connects the foot to the lower leg",
+    "prompts": [
+      "Which body part fits this description: the joint that connects the foot to the lower leg? Give its common English name.",
+      "What is the body part described as the joint that connects the foot to the lower leg? Answer briefly.",
+      "Identify this body part: the joint that connects the foot to the lower leg.",
+      "What is the common name for the joint that connects the foot to the lower leg?",
+      "Here are facts about a body part: the joint that connects the foot to the lower leg. What is its name?",
+      "Please name this body part: the joint that connects the foot to the lower leg.",
+      "Which body part am I describing? It is the joint that connects the foot to the lower leg.",
+      "What do we call the joint that connects the foot to the lower leg? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "beef": {
+    "clue": "the meat obtained from cattle",
+    "prompts": [
+      "Which food fits this description: the meat obtained from cattle? Give its common English name.",
+      "What is the food described as the meat obtained from cattle? Answer briefly.",
+      "Identify this food: the meat obtained from cattle.",
+      "What is the common name for the meat obtained from cattle?",
+      "Here are facts about a food: the meat obtained from cattle. What is its name?",
+      "Please name this food: the meat obtained from cattle.",
+      "Which food am I describing? It is the meat obtained from cattle.",
+      "What do we call the meat obtained from cattle? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "bread": {
+    "clue": "a staple food baked from flour-based dough",
+    "prompts": [
+      "Which food fits this description: a staple food baked from flour-based dough? Give its common English name.",
+      "What is the food described as a staple food baked from flour-based dough? Answer briefly.",
+      "Identify this food: a staple food baked from flour-based dough.",
+      "What is the common name for a staple food baked from flour-based dough?",
+      "Here are facts about a food: a staple food baked from flour-based dough. What is its name?",
+      "Please name this food: a staple food baked from flour-based dough.",
+      "Which food am I describing? It is a staple food baked from flour-based dough.",
+      "What do we call a staple food baked from flour-based dough? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "bus": {
+    "clue": "a large road vehicle designed to carry many passengers along a scheduled route",
+    "prompts": [
+      "Which vehicle fits this description: a large road vehicle designed to carry many passengers along a scheduled route? Give its common English name.",
+      "What is the vehicle described as a large road vehicle designed to carry many passengers along a scheduled route? Answer briefly.",
+      "Identify this vehicle: a large road vehicle designed to carry many passengers along a scheduled route.",
+      "What is the common name for a large road vehicle designed to carry many passengers along a scheduled route?",
+      "Here are facts about a vehicle: a large road vehicle designed to carry many passengers along a scheduled route. What is its name?",
+      "Please name this vehicle: a large road vehicle designed to carry many passengers along a scheduled route.",
+      "Which vehicle am I describing? It is a large road vehicle designed to carry many passengers along a scheduled route.",
+      "What do we call a large road vehicle designed to carry many passengers along a scheduled route? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "cabbage": {
+    "clue": "the leafy vegetable with a dense head used to make sauerkraut",
+    "prompts": [
+      "Which vegetable is described here: the leafy vegetable with a dense head used to make sauerkraut? Give its common English name.",
+      "What vegetable fits this description: the leafy vegetable with a dense head used to make sauerkraut? Answer with its name.",
+      "I am asking about vegetables. Which one is the leafy vegetable with a dense head used to make sauerkraut? Give only the common name.",
+      "Identify the vegetable: the leafy vegetable with a dense head used to make sauerkraut. What is it called?",
+      "Here is a description of a vegetable: the leafy vegetable with a dense head used to make sauerkraut. Tell me its usual name in English.",
+      "A factual question: which vegetable is the leafy vegetable with a dense head used to make sauerkraut? Keep your answer brief.",
+      "What is the common English name of this vegetable: the leafy vegetable with a dense head used to make sauerkraut?",
+      "Please name the vegetable that matches the following facts: the leafy vegetable with a dense head used to make sauerkraut."
+    ],
+    "rewrite": 1
+  },
+  "cake": {
+    "clue": "a sweet baked dessert often served with candles on birthdays",
+    "prompts": [
+      "Which food fits this description: a sweet baked dessert often served with candles on birthdays? Give its common English name.",
+      "What is the food described as a sweet baked dessert often served with candles on birthdays? Answer briefly.",
+      "Identify this food: a sweet baked dessert often served with candles on birthdays.",
+      "What is the common name for a sweet baked dessert often served with candles on birthdays?",
+      "Here are facts about a food: a sweet baked dessert often served with candles on birthdays. What is its name?",
+      "Please name this food: a sweet baked dessert often served with candles on birthdays.",
+      "Which food am I describing? It is a sweet baked dessert often served with candles on birthdays.",
+      "What do we call a sweet baked dessert often served with candles on birthdays? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "canyon": {
+    "clue": "a deep narrow valley with steep rocky sides such as the Grand Canyon",
+    "prompts": [
+      "Which geographic feature fits this description: a deep narrow valley with steep rocky sides such as the Grand Canyon? Give its common English name.",
+      "What is the geographic feature described as a deep narrow valley with steep rocky sides such as the Grand Canyon? Answer briefly.",
+      "Identify this geographic feature: a deep narrow valley with steep rocky sides such as the Grand Canyon.",
+      "What is the common name for a deep narrow valley with steep rocky sides such as the Grand Canyon?",
+      "Here are facts about a geographic feature: a deep narrow valley with steep rocky sides such as the Grand Canyon. What is its name?",
+      "Please name this geographic feature: a deep narrow valley with steep rocky sides such as the Grand Canyon.",
+      "Which geographic feature am I describing? It is a deep narrow valley with steep rocky sides such as the Grand Canyon.",
+      "What do we call a deep narrow valley with steep rocky sides such as the Grand Canyon? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "cat": {
+    "clue": "a small domesticated feline that meows",
+    "prompts": [
+      "Which animal is described here: a small domesticated feline that meows? Give its common English name.",
+      "What animal fits this description: a small domesticated feline that meows? Answer with its name.",
+      "I am asking about animals. Which one is a small domesticated feline that meows? Give only the common name.",
+      "Identify the animal: a small domesticated feline that meows. What is it called?",
+      "Here is a description of a animal: a small domesticated feline that meows. Tell me its usual name in English.",
+      "A factual question: which animal is a small domesticated feline that meows? Keep your answer brief.",
+      "What is the common English name of this animal: a small domesticated feline that meows?",
+      "Please name the animal that matches the following facts: a small domesticated feline that meows."
+    ],
+    "rewrite": 1
+  },
+  "cave": {
+    "clue": "a natural underground chamber large enough for a person to enter",
+    "prompts": [
+      "Which geographic feature is described here: a natural underground chamber large enough for a person to enter? Give its common English name.",
+      "What geographic feature fits this description: a natural underground chamber large enough for a person to enter? Answer with its name.",
+      "I am asking about geographic features. Which one is a natural underground chamber large enough for a person to enter? Give only the common name.",
+      "Identify the geographic feature: a natural underground chamber large enough for a person to enter. What is it called?",
+      "Here is a description of a geographic feature: a natural underground chamber large enough for a person to enter. Tell me its usual name in English.",
+      "A factual question: which geographic feature is a natural underground chamber large enough for a person to enter? Keep your answer brief.",
+      "What is the common English name of this geographic feature: a natural underground chamber large enough for a person to enter?",
+      "Please name the geographic feature that matches the following facts: a natural underground chamber large enough for a person to enter."
+    ],
+    "rewrite": 1
+  },
+  "cheek": {
+    "clue": "the fleshy side of the face below the eye",
+    "prompts": [
+      "Which body part fits this description: the fleshy side of the face below the eye? Give its common English name.",
+      "What is the body part described as the fleshy side of the face below the eye? Answer briefly.",
+      "Identify this body part: the fleshy side of the face below the eye.",
+      "What is the common name for the fleshy side of the face below the eye?",
+      "Here are facts about a body part: the fleshy side of the face below the eye. What is its name?",
+      "Please name this body part: the fleshy side of the face below the eye.",
+      "Which body part am I describing? It is the fleshy side of the face below the eye.",
+      "What do we call the fleshy side of the face below the eye? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "cheese": {
+    "clue": "a solid dairy food made by coagulating milk",
+    "prompts": [
+      "Which food is described here: a solid dairy food made by coagulating milk? Give its common English name.",
+      "What food fits this description: a solid dairy food made by coagulating milk? Answer with its name.",
+      "I am asking about foods. Which one is a solid dairy food made by coagulating milk? Give only the common name.",
+      "Identify the food: a solid dairy food made by coagulating milk. What is it called?",
+      "Here is a description of a food: a solid dairy food made by coagulating milk. Tell me its usual name in English.",
+      "A factual question: which food is a solid dairy food made by coagulating milk? Keep your answer brief.",
+      "What is the common English name of this food: a solid dairy food made by coagulating milk?",
+      "Please name the food that matches the following facts: a solid dairy food made by coagulating milk."
+    ],
+    "rewrite": 1
+  },
+  "clam": {
+    "clue": "a burrowing bivalve mollusk often used in chowder",
+    "prompts": [
+      "Name a burrowing bivalve mollusk often used in chowder. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a burrowing bivalve mollusk often used in chowder? Give just the noun.",
+      "Identify this: a burrowing bivalve mollusk often used in chowder. Reply with one common English noun.",
+      "What is a burrowing bivalve mollusk often used in chowder called? Answer only with the singular noun.",
+      "A short definition is: a burrowing bivalve mollusk often used in chowder. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a burrowing bivalve mollusk often used in chowder? Use the singular form.",
+      "Give the usual English name for a burrowing bivalve mollusk often used in chowder. Write only the singular noun.",
+      "Complete this definition with its common noun: a burrowing bivalve mollusk often used in chowder. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "copper": {
+    "clue": "the reddish metal whose chemical symbol is Cu",
+    "prompts": [
+      "Which metal or alloy fits this description: the reddish metal whose chemical symbol is Cu? Give its common English name.",
+      "What is the metal or alloy described as the reddish metal whose chemical symbol is Cu? Answer briefly.",
+      "Identify this metal or alloy: the reddish metal whose chemical symbol is Cu.",
+      "What is the common name for the reddish metal whose chemical symbol is Cu?",
+      "Here are facts about a metal or alloy: the reddish metal whose chemical symbol is Cu. What is its name?",
+      "Please name this metal or alloy: the reddish metal whose chemical symbol is Cu.",
+      "Which metal or alloy am I describing? It is the reddish metal whose chemical symbol is Cu.",
+      "What do we call the reddish metal whose chemical symbol is Cu? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "coral": {
+    "clue": "a colony-forming marine animal whose skeleton builds tropical reefs",
+    "prompts": [
+      "Name a colony-forming marine animal whose skeleton builds tropical reefs. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a colony-forming marine animal whose skeleton builds tropical reefs? Give just the noun.",
+      "Identify this: a colony-forming marine animal whose skeleton builds tropical reefs. Reply with one common English noun.",
+      "What is a colony-forming marine animal whose skeleton builds tropical reefs called? Answer only with the singular noun.",
+      "A short definition is: a colony-forming marine animal whose skeleton builds tropical reefs. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a colony-forming marine animal whose skeleton builds tropical reefs? Use the singular form.",
+      "Give the usual English name for a colony-forming marine animal whose skeleton builds tropical reefs. Write only the singular noun.",
+      "Complete this definition with its common noun: a colony-forming marine animal whose skeleton builds tropical reefs. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "cow": {
+    "clue": "a female bovine farm animal that produces milk",
+    "prompts": [
+      "Name a female bovine farm animal that produces milk. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a female bovine farm animal that produces milk? Give just the noun.",
+      "Identify this: a female bovine farm animal that produces milk. Reply with one common English noun.",
+      "What is a female bovine farm animal that produces milk called? Answer only with the singular noun.",
+      "A short definition is: a female bovine farm animal that produces milk. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a female bovine farm animal that produces milk? Use the singular form.",
+      "Give the usual English name for a female bovine farm animal that produces milk. Write only the singular noun.",
+      "Complete this definition with its common noun: a female bovine farm animal that produces milk. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "crab": {
+    "clue": "a sideways-walking crustacean with a broad shell and two claws",
+    "prompts": [
+      "Name a sideways-walking crustacean with a broad shell and two claws. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a sideways-walking crustacean with a broad shell and two claws? Give just the noun.",
+      "Identify this: a sideways-walking crustacean with a broad shell and two claws. Reply with one common English noun.",
+      "What is a sideways-walking crustacean with a broad shell and two claws called? Answer only with the singular noun.",
+      "A short definition is: a sideways-walking crustacean with a broad shell and two claws. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a sideways-walking crustacean with a broad shell and two claws? Use the singular form.",
+      "Give the usual English name for a sideways-walking crustacean with a broad shell and two claws. Write only the singular noun.",
+      "Complete this definition with its common noun: a sideways-walking crustacean with a broad shell and two claws. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "ear": {
+    "clue": "the body part used for hearing",
+    "prompts": [
+      "Which body part fits this description: the body part used for hearing? Give its common English name.",
+      "What is the body part described as the body part used for hearing? Answer briefly.",
+      "Identify this body part: the body part used for hearing.",
+      "What is the common name for the body part used for hearing?",
+      "Here are facts about a body part: the body part used for hearing. What is its name?",
+      "Please name this body part: the body part used for hearing.",
+      "Which body part am I describing? It is the body part used for hearing.",
+      "What do we call the body part used for hearing? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "glacier": {
+    "clue": "a slow-moving mass of ice formed from compacted snow",
+    "prompts": [
+      "Which geographic feature fits this description: a slow-moving mass of ice formed from compacted snow? Give its common English name.",
+      "What is the geographic feature described as a slow-moving mass of ice formed from compacted snow? Answer briefly.",
+      "Identify this geographic feature: a slow-moving mass of ice formed from compacted snow.",
+      "What is the common name for a slow-moving mass of ice formed from compacted snow?",
+      "Here are facts about a geographic feature: a slow-moving mass of ice formed from compacted snow. What is its name?",
+      "Please name this geographic feature: a slow-moving mass of ice formed from compacted snow.",
+      "Which geographic feature am I describing? It is a slow-moving mass of ice formed from compacted snow.",
+      "What do we call a slow-moving mass of ice formed from compacted snow? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "gold": {
+    "clue": "the yellow precious metal whose chemical symbol is Au",
+    "prompts": [
+      "Which metal or alloy fits this description: the yellow precious metal whose chemical symbol is Au? Give its common English name.",
+      "What is the metal or alloy described as the yellow precious metal whose chemical symbol is Au? Answer briefly.",
+      "Identify this metal or alloy: the yellow precious metal whose chemical symbol is Au.",
+      "What is the common name for the yellow precious metal whose chemical symbol is Au?",
+      "Here are facts about a metal or alloy: the yellow precious metal whose chemical symbol is Au. What is its name?",
+      "Please name this metal or alloy: the yellow precious metal whose chemical symbol is Au.",
+      "Which metal or alloy am I describing? It is the yellow precious metal whose chemical symbol is Au.",
+      "What do we call the yellow precious metal whose chemical symbol is Au? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "honey": {
+    "clue": "the sweet sticky food produced by bees",
+    "prompts": [
+      "Which food fits this description: the sweet sticky food produced by bees? Give its common English name.",
+      "What is the food described as the sweet sticky food produced by bees? Answer briefly.",
+      "Identify this food: the sweet sticky food produced by bees.",
+      "What is the common name for the sweet sticky food produced by bees?",
+      "Here are facts about a food: the sweet sticky food produced by bees. What is its name?",
+      "Please name this food: the sweet sticky food produced by bees.",
+      "Which food am I describing? It is the sweet sticky food produced by bees.",
+      "What do we call the sweet sticky food produced by bees? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "horse": {
+    "clue": "a large hoofed animal ridden with a saddle",
+    "prompts": [
+      "Name a large hoofed animal ridden with a saddle. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a large hoofed animal ridden with a saddle? Give just the noun.",
+      "Identify this: a large hoofed animal ridden with a saddle. Reply with one common English noun.",
+      "What is a large hoofed animal ridden with a saddle called? Answer only with the singular noun.",
+      "A short definition is: a large hoofed animal ridden with a saddle. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a large hoofed animal ridden with a saddle? Use the singular form.",
+      "Give the usual English name for a large hoofed animal ridden with a saddle. Write only the singular noun.",
+      "Complete this definition with its common noun: a large hoofed animal ridden with a saddle. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "kidney": {
+    "clue": "the bean-shaped organ that filters blood to produce urine",
+    "prompts": [
+      "Which body part fits this description: the bean-shaped organ that filters blood to produce urine? Give its common English name.",
+      "What is the body part described as the bean-shaped organ that filters blood to produce urine? Answer briefly.",
+      "Identify this body part: the bean-shaped organ that filters blood to produce urine.",
+      "What is the common name for the bean-shaped organ that filters blood to produce urine?",
+      "Here are facts about a body part: the bean-shaped organ that filters blood to produce urine. What is its name?",
+      "Please name this body part: the bean-shaped organ that filters blood to produce urine.",
+      "Which body part am I describing? It is the bean-shaped organ that filters blood to produce urine.",
+      "What do we call the bean-shaped organ that filters blood to produce urine? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "lake": {
+    "clue": "a large body of standing fresh water surrounded by land",
+    "prompts": [
+      "Which geographic feature fits this description: a large body of standing fresh water surrounded by land? Give its common English name.",
+      "What is the geographic feature described as a large body of standing fresh water surrounded by land? Answer briefly.",
+      "Identify this geographic feature: a large body of standing fresh water surrounded by land.",
+      "What is the common name for a large body of standing fresh water surrounded by land?",
+      "Here are facts about a geographic feature: a large body of standing fresh water surrounded by land. What is its name?",
+      "Please name this geographic feature: a large body of standing fresh water surrounded by land.",
+      "Which geographic feature am I describing? It is a large body of standing fresh water surrounded by land.",
+      "What do we call a large body of standing fresh water surrounded by land? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "lettuce": {
+    "clue": "the leafy vegetable commonly used as the base of a green salad",
+    "prompts": [
+      "Which vegetable fits this description: the leafy vegetable commonly used as the base of a green salad? Give its common English name.",
+      "What is the vegetable described as the leafy vegetable commonly used as the base of a green salad? Answer briefly.",
+      "Identify this vegetable: the leafy vegetable commonly used as the base of a green salad.",
+      "What is the common name for the leafy vegetable commonly used as the base of a green salad?",
+      "Here are facts about a vegetable: the leafy vegetable commonly used as the base of a green salad. What is its name?",
+      "Please name this vegetable: the leafy vegetable commonly used as the base of a green salad.",
+      "Which vegetable am I describing? It is the leafy vegetable commonly used as the base of a green salad.",
+      "What do we call the leafy vegetable commonly used as the base of a green salad? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "lion": {
+    "clue": "a large African cat whose male has a mane",
+    "prompts": [
+      "Which animal is described here: a large African cat whose male has a mane? Give its common English name.",
+      "What animal fits this description: a large African cat whose male has a mane? Answer with its name.",
+      "I am asking about animals. Which one is a large African cat whose male has a mane? Give only the common name.",
+      "Identify the animal: a large African cat whose male has a mane. What is it called?",
+      "Here is a description of a animal: a large African cat whose male has a mane. Tell me its usual name in English.",
+      "A factual question: which animal is a large African cat whose male has a mane? Keep your answer brief.",
+      "What is the common English name of this animal: a large African cat whose male has a mane?",
+      "Please name the animal that matches the following facts: a large African cat whose male has a mane."
+    ],
+    "rewrite": 1
+  },
+  "lip": {
+    "clue": "the soft fleshy edge surrounding the opening of the mouth",
+    "prompts": [
+      "Which body part is described here: the soft fleshy edge surrounding the opening of the mouth? Give its common English name.",
+      "What body part fits this description: the soft fleshy edge surrounding the opening of the mouth? Answer with its name.",
+      "I am asking about body parts. Which one is the soft fleshy edge surrounding the opening of the mouth? Give only the common name.",
+      "Identify the body part: the soft fleshy edge surrounding the opening of the mouth. What is it called?",
+      "Here is a description of a body part: the soft fleshy edge surrounding the opening of the mouth. Tell me its usual name in English.",
+      "A factual question: which body part is the soft fleshy edge surrounding the opening of the mouth? Keep your answer brief.",
+      "What is the common English name of this body part: the soft fleshy edge surrounding the opening of the mouth?",
+      "Please name the body part that matches the following facts: the soft fleshy edge surrounding the opening of the mouth."
+    ],
+    "rewrite": 1
+  },
+  "liver": {
+    "clue": "the large abdominal organ that produces bile and processes toxins",
+    "prompts": [
+      "Which body part fits this description: the large abdominal organ that produces bile and processes toxins? Give its common English name.",
+      "What is the body part described as the large abdominal organ that produces bile and processes toxins? Answer briefly.",
+      "Identify this body part: the large abdominal organ that produces bile and processes toxins.",
+      "What is the common name for the large abdominal organ that produces bile and processes toxins?",
+      "Here are facts about a body part: the large abdominal organ that produces bile and processes toxins. What is its name?",
+      "Please name this body part: the large abdominal organ that produces bile and processes toxins.",
+      "Which body part am I describing? It is the large abdominal organ that produces bile and processes toxins.",
+      "What do we call the large abdominal organ that produces bile and processes toxins? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "magnesium": {
+    "clue": "the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame",
+    "prompts": [
+      "Which metal or alloy fits this description: the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame? Give its common English name.",
+      "What is the metal or alloy described as the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame? Answer briefly.",
+      "Identify this metal or alloy: the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame.",
+      "What is the common name for the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame?",
+      "Here are facts about a metal or alloy: the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame. What is its name?",
+      "Please name this metal or alloy: the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame.",
+      "Which metal or alloy am I describing? It is the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame.",
+      "What do we call the lightweight metal whose chemical symbol is Mg and that burns with a bright white flame? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "nickel": {
+    "clue": "the silvery metal whose chemical symbol is Ni",
+    "prompts": [
+      "Which metal or alloy fits this description: the silvery metal whose chemical symbol is Ni? Give its common English name.",
+      "What is the metal or alloy described as the silvery metal whose chemical symbol is Ni? Answer briefly.",
+      "Identify this metal or alloy: the silvery metal whose chemical symbol is Ni.",
+      "What is the common name for the silvery metal whose chemical symbol is Ni?",
+      "Here are facts about a metal or alloy: the silvery metal whose chemical symbol is Ni. What is its name?",
+      "Please name this metal or alloy: the silvery metal whose chemical symbol is Ni.",
+      "Which metal or alloy am I describing? It is the silvery metal whose chemical symbol is Ni.",
+      "What do we call the silvery metal whose chemical symbol is Ni? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "pearl": {
+    "clue": "a lustrous gem formed inside an oyster",
+    "prompts": [
+      "Which gemstone is described here: a lustrous gem formed inside an oyster? Give its common English name.",
+      "What gemstone fits this description: a lustrous gem formed inside an oyster? Answer with its name.",
+      "I am asking about gemstones. Which one is a lustrous gem formed inside an oyster? Give only the common name.",
+      "Identify the gemstone: a lustrous gem formed inside an oyster. What is it called?",
+      "Here is a description of a gemstone: a lustrous gem formed inside an oyster. Tell me its usual name in English.",
+      "A factual question: which gemstone is a lustrous gem formed inside an oyster? Keep your answer brief.",
+      "What is the common English name of this gemstone: a lustrous gem formed inside an oyster?",
+      "Please name the gemstone that matches the following facts: a lustrous gem formed inside an oyster."
+    ],
+    "rewrite": 1
+  },
+  "pine": {
+    "clue": "a conifer with needles in bundles and cones, often used as a Christmas tree",
+    "prompts": [
+      "Name a conifer with needles in bundles and cones, often used as a Christmas tree. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a conifer with needles in bundles and cones, often used as a Christmas tree? Give just the noun.",
+      "Identify this: a conifer with needles in bundles and cones, often used as a Christmas tree. Reply with one common English noun.",
+      "What is a conifer with needles in bundles and cones, often used as a Christmas tree called? Answer only with the singular noun.",
+      "A short definition is: a conifer with needles in bundles and cones, often used as a Christmas tree. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a conifer with needles in bundles and cones, often used as a Christmas tree? Use the singular form.",
+      "Give the usual English name for a conifer with needles in bundles and cones, often used as a Christmas tree. Write only the singular noun.",
+      "Complete this definition with its common noun: a conifer with needles in bundles and cones, often used as a Christmas tree. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "potato": {
+    "clue": "the starchy edible tuber commonly used to make French fries",
+    "prompts": [
+      "Which vegetable fits this description: the starchy edible tuber commonly used to make French fries? Give its common English name.",
+      "What is the vegetable described as the starchy edible tuber commonly used to make French fries? Answer briefly.",
+      "Identify this vegetable: the starchy edible tuber commonly used to make French fries.",
+      "What is the common name for the starchy edible tuber commonly used to make French fries?",
+      "Here are facts about a vegetable: the starchy edible tuber commonly used to make French fries. What is its name?",
+      "Please name this vegetable: the starchy edible tuber commonly used to make French fries.",
+      "Which vegetable am I describing? It is the starchy edible tuber commonly used to make French fries.",
+      "What do we call the starchy edible tuber commonly used to make French fries? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "rat": {
+    "clue": "a long-tailed rodent in the genus Rattus, larger than a mouse",
+    "prompts": [
+      "Which animal fits this description: a long-tailed rodent in the genus Rattus, larger than a mouse? Give its common English name.",
+      "What is the animal described as a long-tailed rodent in the genus Rattus, larger than a mouse? Answer briefly.",
+      "Identify this animal: a long-tailed rodent in the genus Rattus, larger than a mouse.",
+      "What is the common name for a long-tailed rodent in the genus Rattus, larger than a mouse?",
+      "Here are facts about a animal: a long-tailed rodent in the genus Rattus, larger than a mouse. What is its name?",
+      "Please name this animal: a long-tailed rodent in the genus Rattus, larger than a mouse.",
+      "Which animal am I describing? It is a long-tailed rodent in the genus Rattus, larger than a mouse.",
+      "What do we call a long-tailed rodent in the genus Rattus, larger than a mouse? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "rocket": {
+    "clue": "a vehicle propelled by ejecting exhaust, often used to reach space",
+    "prompts": [
+      "Which vehicle fits this description: a vehicle propelled by ejecting exhaust, often used to reach space? Give its common English name.",
+      "What is the vehicle described as a vehicle propelled by ejecting exhaust, often used to reach space? Answer briefly.",
+      "Identify this vehicle: a vehicle propelled by ejecting exhaust, often used to reach space.",
+      "What is the common name for a vehicle propelled by ejecting exhaust, often used to reach space?",
+      "Here are facts about a vehicle: a vehicle propelled by ejecting exhaust, often used to reach space. What is its name?",
+      "Please name this vehicle: a vehicle propelled by ejecting exhaust, often used to reach space.",
+      "Which vehicle am I describing? It is a vehicle propelled by ejecting exhaust, often used to reach space.",
+      "What do we call a vehicle propelled by ejecting exhaust, often used to reach space? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "rose": {
+    "clue": "a flower associated with romance, often red and borne on thorny stems",
+    "prompts": [
+      "Name a flower associated with romance, often red and borne on thorny stems. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a flower associated with romance, often red and borne on thorny stems? Give just the noun.",
+      "Identify this: a flower associated with romance, often red and borne on thorny stems. Reply with one common English noun.",
+      "What is a flower associated with romance, often red and borne on thorny stems called? Answer only with the singular noun.",
+      "A short definition is: a flower associated with romance, often red and borne on thorny stems. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a flower associated with romance, often red and borne on thorny stems? Use the singular form.",
+      "Give the usual English name for a flower associated with romance, often red and borne on thorny stems. Write only the singular noun.",
+      "Complete this definition with its common noun: a flower associated with romance, often red and borne on thorny stems. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "ruby": {
+    "clue": "a red gemstone made of corundum",
+    "prompts": [
+      "Name a red gemstone made of corundum. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a red gemstone made of corundum? Give just the noun.",
+      "Identify this: a red gemstone made of corundum. Reply with one common English noun.",
+      "What is a red gemstone made of corundum called? Answer only with the singular noun.",
+      "A short definition is: a red gemstone made of corundum. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a red gemstone made of corundum? Use the singular form.",
+      "Give the usual English name for a red gemstone made of corundum. Write only the singular noun.",
+      "Complete this definition with its common noun: a red gemstone made of corundum. No explanation is needed."
+    ],
+    "rewrite": 0
+  },
+  "sea": {
+    "clue": "a large body of salt water smaller than an ocean, such as the Mediterranean",
+    "prompts": [
+      "Which geographic feature fits this description: a large body of salt water smaller than an ocean, such as the Mediterranean? Give its common English name.",
+      "What is the geographic feature described as a large body of salt water smaller than an ocean, such as the Mediterranean? Answer briefly.",
+      "Identify this geographic feature: a large body of salt water smaller than an ocean, such as the Mediterranean.",
+      "What is the common name for a large body of salt water smaller than an ocean, such as the Mediterranean?",
+      "Here are facts about a geographic feature: a large body of salt water smaller than an ocean, such as the Mediterranean. What is its name?",
+      "Please name this geographic feature: a large body of salt water smaller than an ocean, such as the Mediterranean.",
+      "Which geographic feature am I describing? It is a large body of salt water smaller than an ocean, such as the Mediterranean.",
+      "What do we call a large body of salt water smaller than an ocean, such as the Mediterranean? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "sheep": {
+    "clue": "a woolly farm animal that bleats",
+    "prompts": [
+      "Which animal is described here: a woolly farm animal that bleats? Give its common English name.",
+      "What animal fits this description: a woolly farm animal that bleats? Answer with its name.",
+      "I am asking about animals. Which one is a woolly farm animal that bleats? Give only the common name.",
+      "Identify the animal: a woolly farm animal that bleats. What is it called?",
+      "Here is a description of a animal: a woolly farm animal that bleats. Tell me its usual name in English.",
+      "A factual question: which animal is a woolly farm animal that bleats? Keep your answer brief.",
+      "What is the common English name of this animal: a woolly farm animal that bleats?",
+      "Please name the animal that matches the following facts: a woolly farm animal that bleats."
+    ],
+    "rewrite": 1
+  },
+  "skull": {
+    "clue": "the bony structure of the head that protects the brain",
+    "prompts": [
+      "Which body part fits this description: the bony structure of the head that protects the brain? Give its common English name.",
+      "What is the body part described as the bony structure of the head that protects the brain? Answer briefly.",
+      "Identify this body part: the bony structure of the head that protects the brain.",
+      "What is the common name for the bony structure of the head that protects the brain?",
+      "Here are facts about a body part: the bony structure of the head that protects the brain. What is its name?",
+      "Please name this body part: the bony structure of the head that protects the brain.",
+      "Which body part am I describing? It is the bony structure of the head that protects the brain.",
+      "What do we call the bony structure of the head that protects the brain? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "stomach": {
+    "clue": "the digestive organ that holds food and mixes it with acid",
+    "prompts": [
+      "Which body part fits this description: the digestive organ that holds food and mixes it with acid? Give its common English name.",
+      "What is the body part described as the digestive organ that holds food and mixes it with acid? Answer briefly.",
+      "Identify this body part: the digestive organ that holds food and mixes it with acid.",
+      "What is the common name for the digestive organ that holds food and mixes it with acid?",
+      "Here are facts about a body part: the digestive organ that holds food and mixes it with acid. What is its name?",
+      "Please name this body part: the digestive organ that holds food and mixes it with acid.",
+      "Which body part am I describing? It is the digestive organ that holds food and mixes it with acid.",
+      "What do we call the digestive organ that holds food and mixes it with acid? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "submarine": {
+    "clue": "a vessel designed to travel underwater",
+    "prompts": [
+      "Which vehicle fits this description: a vessel designed to travel underwater? Give its common English name.",
+      "What is the vehicle described as a vessel designed to travel underwater? Answer briefly.",
+      "Identify this vehicle: a vessel designed to travel underwater.",
+      "What is the common name for a vessel designed to travel underwater?",
+      "Here are facts about a vehicle: a vessel designed to travel underwater. What is its name?",
+      "Please name this vehicle: a vessel designed to travel underwater.",
+      "Which vehicle am I describing? It is a vessel designed to travel underwater.",
+      "What do we call a vessel designed to travel underwater? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "subway": {
+    "clue": "an urban railway that runs mainly underground",
+    "prompts": [
+      "Which vehicle is described here: an urban railway that runs mainly underground? Give its common English name.",
+      "What vehicle fits this description: an urban railway that runs mainly underground? Answer with its name.",
+      "I am asking about vehicles. Which one is an urban railway that runs mainly underground? Give only the common name.",
+      "Identify the vehicle: an urban railway that runs mainly underground. What is it called?",
+      "Here is a description of a vehicle: an urban railway that runs mainly underground. Tell me its usual name in English.",
+      "A factual question: which vehicle is an urban railway that runs mainly underground? Keep your answer brief.",
+      "What is the common English name of this vehicle: an urban railway that runs mainly underground?",
+      "Please name the vehicle that matches the following facts: an urban railway that runs mainly underground."
+    ],
+    "rewrite": 1
+  },
+  "tin": {
+    "clue": "the metal whose chemical symbol is Sn, historically used to coat food cans",
+    "prompts": [
+      "Which metal or alloy fits this description: the metal whose chemical symbol is Sn, historically used to coat food cans? Give its common English name.",
+      "What is the metal or alloy described as the metal whose chemical symbol is Sn, historically used to coat food cans? Answer briefly.",
+      "Identify this metal or alloy: the metal whose chemical symbol is Sn, historically used to coat food cans.",
+      "What is the common name for the metal whose chemical symbol is Sn, historically used to coat food cans?",
+      "Here are facts about a metal or alloy: the metal whose chemical symbol is Sn, historically used to coat food cans. What is its name?",
+      "Please name this metal or alloy: the metal whose chemical symbol is Sn, historically used to coat food cans.",
+      "Which metal or alloy am I describing? It is the metal whose chemical symbol is Sn, historically used to coat food cans.",
+      "What do we call the metal whose chemical symbol is Sn, historically used to coat food cans? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "toe": {
+    "clue": "a digit at the end of a human foot",
+    "prompts": [
+      "Which body part fits this description: a digit at the end of a human foot? Give its common English name.",
+      "What is the body part described as a digit at the end of a human foot? Answer briefly.",
+      "Identify this body part: a digit at the end of a human foot.",
+      "What is the common name for a digit at the end of a human foot?",
+      "Here are facts about a body part: a digit at the end of a human foot. What is its name?",
+      "Please name this body part: a digit at the end of a human foot.",
+      "Which body part am I describing? It is a digit at the end of a human foot.",
+      "What do we call a digit at the end of a human foot? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "tomato": {
+    "clue": "the usually red fruit used as a vegetable and as the main ingredient of ketchup",
+    "prompts": [
+      "Which vegetable fits this description: the usually red fruit used as a vegetable and as the main ingredient of ketchup? Give its common English name.",
+      "What is the vegetable described as the usually red fruit used as a vegetable and as the main ingredient of ketchup? Answer briefly.",
+      "Identify this vegetable: the usually red fruit used as a vegetable and as the main ingredient of ketchup.",
+      "What is the common name for the usually red fruit used as a vegetable and as the main ingredient of ketchup?",
+      "Here are facts about a vegetable: the usually red fruit used as a vegetable and as the main ingredient of ketchup. What is its name?",
+      "Please name this vegetable: the usually red fruit used as a vegetable and as the main ingredient of ketchup.",
+      "Which vegetable am I describing? It is the usually red fruit used as a vegetable and as the main ingredient of ketchup.",
+      "What do we call the usually red fruit used as a vegetable and as the main ingredient of ketchup? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "tongue": {
+    "clue": "the muscular organ in the mouth used for tasting",
+    "prompts": [
+      "Which body part fits this description: the muscular organ in the mouth used for tasting? Give its common English name.",
+      "What is the body part described as the muscular organ in the mouth used for tasting? Answer briefly.",
+      "Identify this body part: the muscular organ in the mouth used for tasting.",
+      "What is the common name for the muscular organ in the mouth used for tasting?",
+      "Here are facts about a body part: the muscular organ in the mouth used for tasting. What is its name?",
+      "Please name this body part: the muscular organ in the mouth used for tasting.",
+      "Which body part am I describing? It is the muscular organ in the mouth used for tasting.",
+      "What do we call the muscular organ in the mouth used for tasting? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "train": {
+    "clue": "a linked set of railway vehicles moving along tracks",
+    "prompts": [
+      "Which vehicle fits this description: a linked set of railway vehicles moving along tracks? Give its common English name.",
+      "What is the vehicle described as a linked set of railway vehicles moving along tracks? Answer briefly.",
+      "Identify this vehicle: a linked set of railway vehicles moving along tracks.",
+      "What is the common name for a linked set of railway vehicles moving along tracks?",
+      "Here are facts about a vehicle: a linked set of railway vehicles moving along tracks. What is its name?",
+      "Please name this vehicle: a linked set of railway vehicles moving along tracks.",
+      "Which vehicle am I describing? It is a linked set of railway vehicles moving along tracks.",
+      "What do we call a linked set of railway vehicles moving along tracks? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "truck": {
+    "clue": "a motor vehicle designed primarily to transport cargo",
+    "prompts": [
+      "Which vehicle fits this description: a motor vehicle designed primarily to transport cargo? Give its common English name.",
+      "What is the vehicle described as a motor vehicle designed primarily to transport cargo? Answer briefly.",
+      "Identify this vehicle: a motor vehicle designed primarily to transport cargo.",
+      "What is the common name for a motor vehicle designed primarily to transport cargo?",
+      "Here are facts about a vehicle: a motor vehicle designed primarily to transport cargo. What is its name?",
+      "Please name this vehicle: a motor vehicle designed primarily to transport cargo.",
+      "Which vehicle am I describing? It is a motor vehicle designed primarily to transport cargo.",
+      "What do we call a motor vehicle designed primarily to transport cargo? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "turkey": {
+    "clue": "the large domesticated bird traditionally eaten at American Thanksgiving",
+    "prompts": [
+      "Which food fits this description: the large domesticated bird traditionally eaten at American Thanksgiving? Give its common English name.",
+      "What is the food described as the large domesticated bird traditionally eaten at American Thanksgiving? Answer briefly.",
+      "Identify this food: the large domesticated bird traditionally eaten at American Thanksgiving.",
+      "What is the common name for the large domesticated bird traditionally eaten at American Thanksgiving?",
+      "Here are facts about a food: the large domesticated bird traditionally eaten at American Thanksgiving. What is its name?",
+      "Please name this food: the large domesticated bird traditionally eaten at American Thanksgiving.",
+      "Which food am I describing? It is the large domesticated bird traditionally eaten at American Thanksgiving.",
+      "What do we call the large domesticated bird traditionally eaten at American Thanksgiving? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "valley": {
+    "clue": "a low area of land between hills or mountains",
+    "prompts": [
+      "Which geographic feature fits this description: a low area of land between hills or mountains? Give its common English name.",
+      "What is the geographic feature described as a low area of land between hills or mountains? Answer briefly.",
+      "Identify this geographic feature: a low area of land between hills or mountains.",
+      "What is the common name for a low area of land between hills or mountains?",
+      "Here are facts about a geographic feature: a low area of land between hills or mountains. What is its name?",
+      "Please name this geographic feature: a low area of land between hills or mountains.",
+      "Which geographic feature am I describing? It is a low area of land between hills or mountains.",
+      "What do we call a low area of land between hills or mountains? Give the common English name."
+    ],
+    "rewrite": 0
+  },
+  "whale": {
+    "clue": "a very large marine mammal that breathes through a blowhole",
+    "prompts": [
+      "Name a very large marine mammal that breathes through a blowhole. Answer with only the common singular English noun.",
+      "Which common singular English noun denotes a very large marine mammal that breathes through a blowhole? Give just the noun.",
+      "Identify this: a very large marine mammal that breathes through a blowhole. Reply with one common English noun.",
+      "What is a very large marine mammal that breathes through a blowhole called? Answer only with the singular noun.",
+      "A short definition is: a very large marine mammal that breathes through a blowhole. Supply the common English noun, without explanation.",
+      "In a factual vocabulary quiz, what noun matches this clue: a very large marine mammal that breathes through a blowhole? Use the singular form.",
+      "Give the usual English name for a very large marine mammal that breathes through a blowhole. Write only the singular noun.",
+      "Complete this definition with its common noun: a very large marine mammal that breathes through a blowhole. No explanation is needed."
+    ],
+    "rewrite": 0
+  }
+}
