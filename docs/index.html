@@ -320,9 +320,9 @@ header.top {
 }
 .hero-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 338px;
-  gap: 28px 32px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 354px;
+  gap: 24px 20px;
+  align-items: stretch;
 }
 .hero-meta {
   display: flex;
@@ -335,14 +335,18 @@ header.top {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 12px;
+  padding: 5px 11px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--pos) 8%, var(--paper-2));
   border: 1px solid color-mix(in srgb, var(--pos) 24%, var(--rule));
-  font: 600 11px/1.2 var(--mono);
-  letter-spacing: 0.04em;
+  font: 600 10.8px/1.2 var(--mono);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--ink);
+}
+@media (max-width: 540px) {
+  .hero-pill { white-space: normal; }
 }
 .hero-pill .dot-b, .hero-pill .dot-r {
   width: 7px; height: 7px; border-radius: 50%; display: inline-block;
@@ -480,20 +484,32 @@ a.res-pill:hover {
   background: color-mix(in srgb, var(--pos) 7%, var(--paper-2));
 }
 
-/* 2D Circular Core-Memory Ring Dial (Collision-Free Flex Stack + Hover/Tap Info Popover) */
+/* Interactive 3D Concave Core-Memory Wave Bowl (100% Transparent Canvas + Hover/Tap Info Popover) */
 .hero-lattice {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: -8px;
+  padding-bottom: 2px;
+  gap: 14px;
   min-width: 0;
 }
 .hero-ring-box {
   position: relative;
-  width: 334px;
-  height: 306px;
-  cursor: pointer;
+  width: 100%;
+  max-width: 354px;
+  height: 240px;
+  margin: 0 auto;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.hero-ring-box:active {
+  cursor: grabbing;
 }
 .hero-ring-box canvas {
   position: absolute;
@@ -501,29 +517,32 @@ a.res-pill:hover {
   width: 100%;
   height: 100%;
   display: block;
+  background: transparent;
 }
 .lattice-cap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  text-align: center;
-  font: 600 11.8px/1.36 var(--mono);
-  color: var(--ink-2);
+  display: contents;
 }
 .ring-info-btn {
   appearance: none;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 2px 8px 2px 9px;
-  border-radius: 999px;
+  gap: 2px;
+  padding: 6px 16px;
+  border-radius: 14px;
   border: 1px solid color-mix(in srgb, var(--ink) 14%, var(--rule));
   background: color-mix(in srgb, var(--ink) 3%, transparent);
-  font: 600 11.5px/1.3 var(--mono);
-  color: var(--ink-2);
+  font: 600 11.2px/1.28 var(--mono);
+  color: var(--ink);
   cursor: pointer;
   transition: border-color .2s var(--ease), background-color .2s var(--ease), color .2s var(--ease);
+}
+.ring-btn-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  color: var(--ink-3);
 }
 .ring-info-btn:hover,
 .hero-lattice.is-open .ring-info-btn {
@@ -552,7 +571,8 @@ a.res-pill:hover {
   font: 700 10px/1 var(--ui);
 }
 .lattice-sub {
-  font: 600 11.4px/1.35 var(--mono);
+  text-align: center;
+  font: 600 11.4px/1.38 var(--mono);
   color: var(--ink-3);
 }
 .ring-pop {
@@ -1143,13 +1163,16 @@ pre.bibtex {
 
 @media (max-width: 960px) {
   .hero-split { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-  .hero-lattice { margin: 2px auto 0; }
-  .hero-ring-box { width: min(260px, 82vw); height: 244px; }
+  .hero-lattice { margin: 4px auto 0; padding-bottom: 0; justify-content: flex-start; gap: 14px; max-width: 400px; }
+  .hero-ring-box { width: min(378px, 90vw); max-width: 378px; height: 256px; }
   .ring-pop { left: 50%; right: auto; transform: translate(-50%, 4px); }
   .hero-lattice.is-open .ring-pop { transform: translate(-50%, 0); }
   figure.wide { width: auto; margin-left: 0; transform: none; }
   .rules, .chat-pair { grid-template-columns: minmax(0, 1fr); }
   .steps4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 440px) {
+  .hero-ring-box { height: 262px; }
 }
 @media (max-width: 600px) {
   .steps4 { grid-template-columns: minmax(0, 1fr); }
@@ -1678,7 +1701,7 @@ figure.wide#fig-bridge {
               <sup>1</sup>IQuest Research &ensp;&middot;&ensp; <sup>2</sup>Oxford University &ensp;&middot;&ensp; <sup>&#9993;</sup><a class="affil-link" href="https://bigaidream.github.io/contact/" target="_blank" rel="noopener">Contact</a>
             </div>
             <div class="hero-bar">
-              <p class="stamp">v1.0 &middot; Last updated: November 26, 2026</p>
+              <p class="stamp">v1.1 &middot; Last updated: November 28, 2026</p>
               <span class="res-sep" aria-hidden="true"></span>
               <div class="res-links">
                 <a class="res-pill" href="https://github.com/bigaidream/neural-corewar" target="_blank" rel="noopener">
@@ -1690,20 +1713,20 @@ figure.wide#fig-bridge {
           </div>
         </div>
         <div class="hero-lattice" id="hero-lattice">
-          <div class="hero-ring-box" id="hero-ring-box">
-            <canvas id="hero-canvas" aria-hidden="true"></canvas>
+          <div class="hero-ring-box" id="hero-ring-box" title="Drag to tilt & rotate in 3D">
+            <canvas id="hero-canvas" aria-label="Interactive 3D Core-Memory Wave Ring across Rounds 0 to 15"></canvas>
           </div>
           <div class="lattice-cap">
             <button type="button" class="ring-info-btn" id="ring-info-btn" aria-expanded="false" aria-controls="ring-pop">
-              <span>Core War ring (L8&ndash;19) &middot; <span class="ring-cta"><span class="act-d">Click</span><span class="act-m">Tap</span> for details</span></span>
-              <span class="ring-i" aria-hidden="true">i</span>
+              <span>Core War ring (Layers 8&ndash;19)</span>
+              <span class="ring-btn-sub"><span>Drag 3D &middot;</span><span class="ring-cta"><span class="act-d">Click</span><span class="act-m">Tap</span> for details</span><span class="ring-i" aria-hidden="true">i</span></span>
             </button>
-            <div class="lattice-sub"><span style="color:var(--pos)">Blue (+STEER outward)</span> vs. <span style="color:var(--neg)">Red (&minus;STEER inward)</span> tug-of-war</div>
+            <div class="lattice-sub"><span style="white-space:nowrap;"><span style="color:var(--pos)">Blue (+STEER crests)</span> vs. <span style="color:var(--neg)">Red (&minus;STEER troughs)</span></span><br>tug-of-war</div>
           </div>
           <div class="ring-pop" id="ring-pop" role="region" aria-label="Core ring explanation">
-            <p><b>Why a ring?</b> A visual nod to 1984 <i>Core War</i>&rsquo;s circular memory ring, wrapping <code>Qwen3.5-0.8B</code>&rsquo;s 12 editable MLP layers (<code>43,008</code> shared columns) into one shared arena.</p>
-            <p><b>Two-sided clash:</b> Isolated agents <b style="color:var(--pos)">A (Blue)</b> and <b style="color:var(--neg)">B (Red)</b> never chat&mdash;they pull the same columns in opposite <code>STEER</code> directions (outward vs. inward) so everyday chat triggers the rival&rsquo;s taboo word instead of their own.</p>
-            <a class="xref ring-jump" id="ring-jump" href="#fig-bridge">See how Core War maps to shared weights in Figure 1 &darr;</a>
+            <p><b>Rings (<code>Layers 8&rarr;19</code>):</b> Each ring wraps one MLP layer&rsquo;s <code>3,584</code> columns around <code>360&deg;</code> (<code>43,008</code> shared columns in <code>Qwen3.5-0.8B</code>, echoing 1984 <i>Core War</i>&rsquo;s memory ring).</p>
+            <p><b>3D Waves (<code>Rounds 0&ndash;15</code>):</b> Two isolated agents (zero chat) pull contested columns in opposite directions&mdash;<b style="color:var(--pos)">Blue (+STEER)</b> crests up vs. <b style="color:var(--neg)">Red (&minus;STEER)</b> troughs down&mdash;clustering naturally in outer <code>Layers 15&ndash;19</code>.</p>
+            <p style="margin-top:6px;font-size:11.8px;color:var(--ink-3);"><i>Drag ring to tilt &amp; rotate in 3D</i> &ensp;&middot;&ensp; <a class="xref ring-jump" id="ring-jump" href="#fig-bridge" style="margin-top:0;">Full setup in Figure 1 &darr;</a></p>
           </div>
         </div>
       </div>
@@ -1854,7 +1877,7 @@ figure.wide#fig-bridge {
               <span class="rc-tag t84">1984</span><b>1 RAM cell</b> (of <code>8,000</code>): holds runnable code (<code>MOV</code>) or a halt bomb (<code>DAT</code>).
             </div>
             <div class="rc-row">
-              <span class="rc-tag t26">2026</span><b>1 MLP column</b> (of <code>43,008</code> in <code>L08–19</code>): 1 neuron&rsquo;s 1,024-d output vector; outer layers frozen.
+              <span class="rc-tag t26">2026</span><b>1 MLP column</b> (of <code>43,008</code> in <code>Layers 8–19</code>): 1 neuron&rsquo;s 1,024-d output vector; outer layers frozen.
             </div>
           </div>
 
@@ -2509,205 +2532,500 @@ Return ONLY one JSON object per turn.</pre>
   onScroll();
 })();
 
-/* 4. 2D Circular Core-Memory Ring (DeepMind Cobalt + Coral Radial Oscilloscope) */
-(() => {
+/* 4. Interactive 3D Core-Memory Wave Bowl (Seamless 0->15->0 Ping-Pong Loop, 100% Transparent Canvas) */
+queueMicrotask(() => {
   const cv = document.getElementById("hero-canvas");
-  if (!cv) return;
-  const host = cv.parentElement;
+  const host = document.getElementById("hero-ring-box");
+  const srcD = window.__NCW_D;
+  if (!cv || !host || !srcD) return;
   const ctx = cv.getContext("2d");
-  const N_CELLS = 96; // 12 layers (L08..L19) x 8 representative columns around the ring
-  let W = 0, H = 0, raf = 0, visible = true;
 
-  let colInk = "#181a1f", colMuted = "#5f6368", colRule = "#dcd8ce", colBlue = "#1967d2", colRed = "#e04826";
-  function syncColors() {
-    const st = getComputedStyle(document.documentElement);
-    colInk   = st.getPropertyValue("--ink").trim()   || "#181a1f";
-    colMuted = st.getPropertyValue("--ink-3").trim() || "#5f6368";
-    colRule  = st.getPropertyValue("--rule").trim()  || "#dcd8ce";
-    colBlue  = st.getPropertyValue("--pos").trim()   || "#1967d2";
-    colRed   = st.getPropertyValue("--neg").trim()   || "#e04826";
-  }
-
-  const cells = Array.from({ length: N_CELLS }, (_, i) => {
-    const layerIdx = Math.floor(i / 8); // 0..11 -> L08..L19
-    const activeZone = layerIdx >= 7;   // L15..L19 high-contest sweet spot
-    const init = activeZone ? (Math.sin(i * 1.7) * 0.45) : (Math.sin(i * 2.3) * 0.06);
-    return { val: init, target: init, flash: 0, activeZone };
+  // Combine the 100 empirical contested columns (L14-L19) with the 3 real early-layer probe edits (L9, L11, L12)
+  const cols = srcD.cols.slice();
+  const signed = srcD.signed.map(r => r.slice());
+  const earlyReal = [
+    [[9, 3091],  [0, 0, -0.22, -0.26, -0.18, -0.15, -0.15, -0.12, -0.12, -0.10, -0.10, -0.10, -0.10, -0.10, -0.10, -0.10]],
+    [[11, 21],   [0, 0.16, 0.17, 0.17, 0.14, 0.14, 0.12, 0.12, 0.12, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10]],
+    [[12, 1878], [0, 0, 0.18, -0.17, -0.15, -0.15, -0.14, -0.14, -0.12, -0.12, -0.12, -0.12, -0.12, -0.12, -0.12, -0.12]]
+  ];
+  earlyReal.forEach(([coord, ser]) => {
+    cols.push(coord);
+    for (let r = 0; r < 16; r++) signed[r].push(ser[r]);
   });
 
-  let angA = -Math.PI * 0.35;
-  let angB =  Math.PI * 0.55;
-  let prevIdxA = -1, prevIdxB = -1;
+  const LAYERS = 12;   // Writable arena Layers 8..19
+  const N_SEG  = 180;  // Smooth 2-deg angular resolution around 0..2pi
+  const TWO_PI = Math.PI * 2;
 
-  function normIdx(angle) {
-    let u = (angle + Math.PI * 0.5) / (Math.PI * 2);
-    u = u - Math.floor(u);
-    return Math.floor(u * N_CELLS) % N_CELLS;
+  const byLayer = Array.from({ length: LAYERS }, () => []);
+  for (let k = 0; k < cols.length; k++) {
+    const l = cols[k][0], c = cols[k][1];
+    if (l >= 8 && l <= 19) byLayer[l - 8].push({ idx: k, th: (c / 3584) * TWO_PI });
   }
 
-  function step(dt) {
-    angA += dt * 0.00072;
-    angB += dt * 0.00078;
+  const segAngles = new Float32Array(N_SEG + 1);
+  for (let s = 0; s <= N_SEG; s++) segAngles[s] = (s / N_SEG) * TWO_PI;
 
-    const idxA = normIdx(angA);
-    const idxB = normIdx(angB);
-
-    if (idxA !== prevIdxA) {
-      prevIdxA = idxA;
-      const c = cells[idxA];
-      const boost = c.activeZone ? (0.58 + 0.36 * Math.abs(Math.sin(idxA * 1.9))) : (idxA % 5 === 0 ? 0.24 : 0.0);
-      if (c.target < -0.15) {
-        c.target = boost * 0.65;
-        c.flash = 1.0;
-      } else if (boost > 0.05) {
-        c.target = boost;
-        c.flash = 0.7;
+  const layerInfluences = Array.from({ length: LAYERS }, (_, li) => {
+    const items = byLayer[li];
+    const sigma = li >= 7 ? 0.135 : 0.17;
+    const inv2Sig2 = 1 / (2 * sigma * sigma);
+    return Array.from({ length: N_SEG + 1 }, (__, s) => {
+      const th = segAngles[s];
+      const hits = [];
+      for (let m = 0; m < items.length; m++) {
+        let d = Math.abs(th - items[m].th);
+        if (d > Math.PI) d = TWO_PI - d;
+        if (d < sigma * 3.1) hits.push([items[m].idx, Math.exp(-d * d * inv2Sig2)]);
       }
-    }
+      return hits;
+    });
+  });
 
-    if (idxB !== prevIdxB) {
-      prevIdxB = idxB;
-      const c = cells[idxB];
-      const pull = c.activeZone ? -(0.56 + 0.36 * Math.abs(Math.cos(idxB * 1.5))) : (idxB % 6 === 0 ? -0.22 : 0.0);
-      if (c.target > 0.15) {
-        c.target = pull * 0.62;
-        c.flash = 1.0;
-      } else if (pull < -0.05) {
-        c.target = pull;
-        c.flash = 0.7;
-      }
-    }
+  // Smooth low-profile 3D concave arena so oblique ~33-deg grazing tilt shows dramatic vertical wave relief
+  function dishZ(r) {
+    return -0.06 + 0.14 * Math.pow(Math.max(0, r) / 1.05, 1.45);
+  }
+  function ringGeom(li) {
+    const u = li / (LAYERS - 1);
+    const r = 0.295 + 0.68 * u; // 0.295 (Layer 8) -> 0.975 (Layer 19), filling the bowl cleanly
+    return { r, z: dishZ(r) };
+  }
 
-    const k = Math.min(1, dt * 0.0075);
-    for (let i = 0; i < N_CELLS; i++) {
-      const c = cells[i];
-      c.val += (c.target - c.val) * k;
-      c.target *= Math.pow(0.92, dt / 1000);
-      c.flash = Math.max(0, c.flash - dt / 650);
+  function makeRot(tx, ty, sp) {
+    const cx = Math.cos(tx), sx = Math.sin(tx);
+    const cy = Math.cos(ty), sy = Math.sin(ty);
+    const cz = Math.cos(sp), sz = Math.sin(sp);
+    return [
+      cy * cz + sy * sx * sz, -cy * sz + sy * sx * cz, sy * cx,
+      cx * sz,                 cx * cz,                -sx,
+      -sy * cz + cy * sx * sz, sy * sz + cy * sx * cz, cy * cx
+    ];
+  }
+
+  function proj(x, y, z, M, cx, cy, Rpx) {
+    const rx = M[0] * x + M[1] * y + M[2] * z;
+    const ry = M[3] * x + M[4] * y + M[5] * z;
+    const rz = M[6] * x + M[7] * y + M[8] * z;
+    const s = 3.15 / (3.15 - rz);
+    return { px: cx + rx * Rpx * s, py: cy - ry * Rpx * s, rz, s };
+  }
+
+  function getPalette() {
+    const th = document.documentElement.dataset.theme || "paper";
+    const st = getComputedStyle(document.documentElement);
+    const bgHex = st.getPropertyValue("--paper").trim() || (th === "dark" ? "#14161a" : "#f7f6f2");
+    if (th === "dark") {
+      return {
+        dark: true,
+        bgHex,
+        ink: "#e8eaed",
+        ink3: "#9aa0a6",
+        rule: "rgba(232,234,237,0.12)",
+        spoke: "rgba(232,234,237,0.11)",
+        ringActive: "rgba(232,234,237,0.22)",
+        rimFront: "rgba(232,234,237,0.66)",
+        rimBevel: "rgba(232,234,237,0.26)",
+        rimBack: "rgba(232,234,237,0.20)",
+        blueStroke: "#70abff",
+        blueFill: "rgba(104, 166, 255, 0.28)",
+        blueGlow: "rgba(104, 166, 255, 0.52)",
+        redStroke: "#ff8566",
+        redFill: "rgba(255, 123, 89, 0.28)",
+        redGlow: "rgba(255, 123, 89, 0.52)"
+      };
     }
+    return {
+      dark: false,
+      bgHex,
+      ink: "#181a1f",
+      ink3: "#5f6368",
+      rule: "rgba(24,26,31,0.105)",
+      spoke: "rgba(24,26,31,0.10)",
+      ringActive: "rgba(24,26,31,0.20)",
+      rimFront: "rgba(24,26,31,0.68)",
+      rimBevel: "rgba(24,26,31,0.24)",
+      rimBack: "rgba(24,26,31,0.22)",
+      blueStroke: "#1967d2",
+      blueFill: "rgba(25, 103, 210, 0.21)",
+      blueGlow: "rgba(25, 103, 210, 0.42)",
+      redStroke: "#e04826",
+      redFill: "rgba(224, 72, 38, 0.21)",
+      redGlow: "rgba(224, 72, 38, 0.42)"
+    };
+  }
+
+  const reducedMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  let cssW = 354, cssH = 268, dpr = 1;
+  // Brisk constant-speed forward loop: 0 -> 15 -> 16.2 (smooth 1.2s dissolve to W0) -> 0
+  let tRound = 3.8;
+  let carrierPhase = 0.0;
+  let tiltX = -1.01, tiltY = 0.05, spin = -0.35;
+  let dragActive = false, dragMoved = false, lastX = 0, lastY = 0;
+  let inView = true, raf = 0, lastTs = performance.now();
+
+  cv.addEventListener("pointerdown", e => {
+    dragActive = true;
+    dragMoved = false;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    cv.setPointerCapture(e.pointerId);
+  });
+  cv.addEventListener("pointermove", e => {
+    if (!dragActive) return;
+    const dx = e.clientX - lastX, dy = e.clientY - lastY;
+    if (Math.hypot(dx, dy) > 3) dragMoved = true;
+    lastX = e.clientX; lastY = e.clientY;
+    spin += dx * 0.0085;
+    tiltX = Math.max(-1.16, Math.min(-0.62, tiltX + dy * 0.0055));
+    draw();
+  });
+  cv.addEventListener("pointerup", () => { dragActive = false; });
+  cv.addEventListener("pointercancel", () => { dragActive = false; });
+
+  function haloText(text, x, y, font, fill, align, halo, hw) {
+    ctx.save();
+    ctx.font = font;
+    ctx.textAlign = align || "center";
+    ctx.textBaseline = "middle";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = hw || 3.8;
+    ctx.strokeStyle = halo;
+    ctx.strokeText(text, x, y);
+    ctx.fillStyle = fill;
+    ctx.fillText(text, x, y);
+    ctx.restore();
   }
 
   function resize() {
     const r = host.getBoundingClientRect();
-    W = r.width; H = r.height;
-    if (W <= 0 || H <= 0) return;
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
-    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    syncColors();
+    cssW = Math.max(1, r.width);
+    cssH = Math.max(1, r.height);
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(cssW * dpr);
+    cv.height = Math.round(cssH * dpr);
     draw();
   }
 
   function draw() {
-    ctx.clearRect(0, 0, W, H);
-    const cx = W * 0.50, cy = H * 0.50;
-    const R = Math.min(W, H) * 0.315;
-    const maxAmp = R * 0.255;
+    if (cssW <= 1 || cssH <= 1) return;
+    const P = getPalette();
+    ctx.save();
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cssW, cssH);
 
-    ctx.strokeStyle = colRule;
-    ctx.lineWidth = 1.0;
-    ctx.setLineDash([2, 3]);
-    ctx.beginPath(); ctx.arc(cx, cy, R + maxAmp + 4, 0, Math.PI * 2); ctx.stroke();
-    ctx.beginPath(); ctx.arc(cx, cy, R - maxAmp - 4, 0, Math.PI * 2); ctx.stroke();
-    ctx.setLineDash([]);
+    const cx = cssW * 0.5;
+    const cy = cssH * 0.495;
+    const Rpx = Math.min(cssW * 0.456, cssH * 0.672);
+    const M = makeRot(tiltX, tiltY, spin);
 
-    ctx.strokeStyle = colInk;
-    ctx.globalAlpha = 0.24;
-    ctx.lineWidth = 1.2;
-    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke();
-    ctx.globalAlpha = 1;
+    // Forward-only interpolation: 0..15 across empirical rounds, then 15..16.2 smoothly blends signed[15] -> signed[0]
+    let sArr0, sArr1, uRound;
+    if (tRound < 15.0) {
+      const r0 = Math.max(0, Math.floor(tRound));
+      const r1 = Math.min(15, r0 + 1);
+      const frac = tRound - r0;
+      uRound = frac * frac * (3 - 2 * frac);
+      sArr0 = signed[r0];
+      sArr1 = signed[r1];
+    } else {
+      const frac = Math.min(1, (tRound - 15.0) / 1.2);
+      uRound = frac * frac * (3 - 2 * frac);
+      sArr0 = signed[15];
+      sArr1 = signed[0];
+    }
+    const curSigned = new Float32Array(cols.length);
+    for (let k = 0; k < cols.length; k++) {
+      curSigned[k] = sArr0[k] + (sArr1[k] - sArr0[k]) * uRound;
+    }
 
-    const s = Math.min(1, Math.min(W, H) / 300);
-    ctx.font = `600 ${(11.5 * s).toFixed(1)}px 'IBM Plex Mono', monospace`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    for (let l = 0; l < 12; l++) {
-      const a0 = -Math.PI * 0.5 + (l / 12) * Math.PI * 2;
-      const aMid = a0 + (0.5 / 12) * Math.PI * 2;
-      ctx.strokeStyle = colRule;
-      ctx.lineWidth = 0.85;
+    // In screen space (py = cy - ry), decreasing th is clockwise and increasing th is counter-clockwise:
+    const angBlue = -carrierPhase * 1.05;           // Blue clockwise on outer rimOutR
+    const angRed  =  carrierPhase * 1.05 + Math.PI; // Red counter-clockwise on adjacent rimInR
+
+    const rimInR = 1.022, rimInZ = dishZ(rimInR);
+    const rimOutR = 1.048, rimOutZ = dishZ(rimOutR);
+    const rimBevelR = 1.042, rimBevelZ = rimOutZ - 0.044;
+    const hubP = proj(0, 0, dishZ(0), M, cx, cy, Rpx);
+
+    // 1. 12 ultra-faint 3D curved radial dashed spokes enhancing concave perspective (no murky bowl shadows!)
+    ctx.save();
+    ctx.strokeStyle = P.spoke;
+    ctx.lineWidth = 0.65;
+    ctx.setLineDash([2, 3.5]);
+    for (let sp = 0; sp < 12; sp++) {
+      const th = (sp / 12) * TWO_PI;
+      const ct = Math.cos(th), st = Math.sin(th);
       ctx.beginPath();
-      ctx.moveTo(cx + Math.cos(a0) * (R - maxAmp - 4), cy + Math.sin(a0) * (R - maxAmp - 4));
-      ctx.lineTo(cx + Math.cos(a0) * (R + maxAmp + 8 * s), cy + Math.sin(a0) * (R + maxAmp + 8 * s));
+      for (let step = 0; step <= 14; step++) {
+        const rr = 0.258 + (rimInR - 0.258) * (step / 14);
+        const p = proj(rr * ct, rr * st, dishZ(rr), M, cx, cy, Rpx);
+        if (step === 0) ctx.moveTo(p.px, p.py); else ctx.lineTo(p.px, p.py);
+      }
       ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    ctx.restore();
 
-      const lblR = R + maxAmp + 18 * s;
-      ctx.fillStyle = l >= 7 ? colInk : colMuted;
-      ctx.globalAlpha = l >= 7 ? 0.92 : 0.55;
-      ctx.fillText("L" + (8 + l), cx + Math.cos(aMid) * lblR, cy + Math.sin(aMid) * lblR);
+    // 2. Outer Swiss precision ticks + clean double-line lip right around Layer 19
+    for (let i = 0; i < 144; i++) {
+      const th = (i / 144) * TWO_PI;
+      const major = (i % 12 === 0);
+      const r2 = rimOutR * (major ? 1.032 : (i % 3 === 0 ? 1.019 : 1.010));
+      const p1 = proj(rimOutR * Math.cos(th), rimOutR * Math.sin(th), rimOutZ, M, cx, cy, Rpx);
+      const p2 = proj(r2 * Math.cos(th), r2 * Math.sin(th), rimOutZ + 0.005, M, cx, cy, Rpx);
+      ctx.beginPath();
+      ctx.moveTo(p1.px, p1.py);
+      ctx.lineTo(p2.px, p2.py);
+      ctx.strokeStyle = P.ink;
+      ctx.globalAlpha = major ? 0.36 : (i % 3 === 0 ? 0.17 : 0.08);
+      ctx.lineWidth = major ? 0.9 : 0.55;
+      ctx.stroke();
     }
     ctx.globalAlpha = 1;
 
-    ctx.lineCap = "round";
-    for (let i = 0; i < N_CELLS; i++) {
-      const a = -Math.PI * 0.5 + ((i + 0.5) / N_CELLS) * Math.PI * 2;
-      const ca = Math.cos(a), sa = Math.sin(a);
-      const c = cells[i];
-      const v = c.val;
+    ctx.beginPath();
+    for (let i = 0; i <= 120; i++) {
+      const th = (i / 120) * TWO_PI;
+      const p = proj(rimInR * Math.cos(th), rimInR * Math.sin(th), rimInZ, M, cx, cy, Rpx);
+      if (i === 0) ctx.moveTo(p.px, p.py); else ctx.lineTo(p.px, p.py);
+    }
+    ctx.strokeStyle = P.rimBack;
+    ctx.lineWidth = 0.65;
+    ctx.stroke();
 
-      if (Math.abs(v) < 0.04) {
-        ctx.strokeStyle = colInk;
-        ctx.globalAlpha = 0.24;
-        ctx.lineWidth = 1.1;
+    for (let i = 0; i < 128; i++) {
+      const th1 = (i / 128) * TWO_PI, th2 = ((i + 1) / 128) * TWO_PI;
+      const p1 = proj(rimOutR * Math.cos(th1), rimOutR * Math.sin(th1), rimOutZ, M, cx, cy, Rpx);
+      const p2 = proj(rimOutR * Math.cos(th2), rimOutR * Math.sin(th2), rimOutZ, M, cx, cy, Rpx);
+      const front = (p1.rz + p2.rz) > 0.04;
+      ctx.beginPath();
+      ctx.moveTo(p1.px, p1.py);
+      ctx.lineTo(p2.px, p2.py);
+      ctx.strokeStyle = front ? P.rimFront : P.rimBack;
+      ctx.lineWidth = front ? 1.50 : 0.68;
+      ctx.stroke();
+
+      if (front) {
+        const b1 = proj(rimBevelR * Math.cos(th1), rimBevelR * Math.sin(th1), rimBevelZ, M, cx, cy, Rpx);
+        const b2 = proj(rimBevelR * Math.cos(th2), rimBevelR * Math.sin(th2), rimBevelZ, M, cx, cy, Rpx);
         ctx.beginPath();
-        ctx.moveTo(cx + ca * (R - 2), cy + sa * (R - 2));
-        ctx.lineTo(cx + ca * (R + 2), cy + sa * (R + 2));
-        ctx.stroke();
-      } else {
-        const rEnd = R + v * maxAmp;
-        ctx.strokeStyle = v > 0 ? colBlue : colRed;
-        ctx.globalAlpha = Math.min(1, 0.55 + Math.abs(v) * 0.5 + c.flash * 0.35);
-        ctx.lineWidth = 2.2 + c.flash * 0.9;
-        ctx.beginPath();
-        ctx.moveTo(cx + ca * R, cy + sa * R);
-        ctx.lineTo(cx + ca * rEnd, cy + sa * rEnd);
+        ctx.moveTo(b1.px, b1.py);
+        ctx.lineTo(b2.px, b2.py);
+        ctx.strokeStyle = P.rimBevel;
+        ctx.lineWidth = 0.80;
         ctx.stroke();
       }
     }
-    ctx.globalAlpha = 1;
 
-    function drawPointer(ang, col, outer) {
-      const rOrbit = outer ? (R + maxAmp + 4) : (R - maxAmp - 4);
-      ctx.strokeStyle = col;
-      ctx.lineWidth = 2.2;
-      ctx.globalAlpha = 0.35;
+    // 3. Pure 3D wave curves across Layers 8..19 (~1.3x boosted amplitude; cushion only 6 o'clock outer lip so troughs never poke out)
+    const AMP_UP = 0.332;
+    const AMP_DOWN_BASE = 0.242;
+    const segQuads = [];
+
+    for (let li = 0; li < LAYERS; li++) {
+      const { r, z } = ringGeom(li);
+      const inf = layerInfluences[li];
+      const hotZone = li >= 7 ? 1.0 : 0.28;
+
       ctx.beginPath();
-      ctx.arc(cx, cy, rOrbit, ang - 0.34, ang);
+      for (let s = 0; s <= 90; s++) {
+        const th = (s / 90) * TWO_PI;
+        const p = proj(r * Math.cos(th), r * Math.sin(th), z, M, cx, cy, Rpx);
+        if (s === 0) ctx.moveTo(p.px, p.py); else ctx.lineTo(p.px, p.py);
+      }
+      ctx.strokeStyle = (li === 0 || li === 7 || li === 11) ? P.ringActive : P.rule;
+      ctx.lineWidth = (li === 0 || li === 11) ? 0.9 : 0.55;
+      if (li === 0) ctx.setLineDash([2.5, 3]);
       ctx.stroke();
+      if (li === 0) ctx.setLineDash([]);
 
-      const px = cx + Math.cos(ang) * rOrbit, py = cy + Math.sin(ang) * rOrbit;
-      ctx.globalAlpha = 0.48;
-      ctx.lineWidth = 1.1;
-      ctx.beginPath();
-      ctx.moveTo(px, py);
-      ctx.lineTo(cx + Math.cos(ang) * R, cy + Math.sin(ang) * R);
-      ctx.stroke();
+      const basePts = new Array(N_SEG + 1);
+      const wavePts = new Array(N_SEG + 1);
+      const vals    = new Float32Array(N_SEG + 1);
 
-      ctx.globalAlpha = 0.98;
-      ctx.fillStyle = col;
-      ctx.beginPath();
-      ctx.arc(px, py, 3.6 * s, 0, Math.PI * 2);
-      ctx.fill();
+      for (let s = 0; s <= N_SEG; s++) {
+        const th = segAngles[s];
+        const hits = inf[s];
+        let v = 0;
+        for (let h = 0; h < hits.length; h++) {
+          v += curSigned[hits[h][0]] * hits[h][1];
+        }
+        const dB = Math.abs(Math.atan2(Math.sin(th - angBlue), Math.cos(th - angBlue)));
+        const dR = Math.abs(Math.atan2(Math.sin(th - angRed),  Math.cos(th - angRed)));
+        v +=  0.11 * hotZone * Math.exp(-(dB * dB) / 0.15) * (0.68 + 0.32 * Math.cos(th * 5 + carrierPhase * 2.6));
+        v += -0.11 * hotZone * Math.exp(-(dR * dR) / 0.15) * (0.68 + 0.32 * Math.cos(th * 5 - carrierPhase * 2.6));
+
+        let ampDown = AMP_DOWN_BASE;
+        if (li >= 9) {
+          const front6 = Math.max(0, -Math.sin(th + spin));
+          const guard = front6 * front6;
+          ampDown = AMP_DOWN_BASE - (li === 11 ? 0.145 : (li === 10 ? 0.095 : 0.045)) * guard;
+        }
+        const tv = Math.tanh(v * 1.12);
+        const dz = tv >= 0 ? tv * AMP_UP : tv * ampDown;
+        const x = r * Math.cos(th), y = r * Math.sin(th);
+        basePts[s] = proj(x, y, z, M, cx, cy, Rpx);
+        wavePts[s] = proj(x, y, z + dz, M, cx, cy, Rpx);
+        vals[s] = v;
+      }
+
+      for (let s = 0; s < N_SEG; s++) {
+        const vMid = (vals[s] + vals[s + 1]) * 0.5;
+        if (Math.abs(vMid) < 0.020) continue;
+        const b0 = basePts[s], b1 = basePts[s + 1];
+        const w0 = wavePts[s], w1 = wavePts[s + 1];
+        segQuads.push({
+          rz: (w0.rz + w1.rz) * 0.5,
+          b0, b1, w0, w1,
+          v: vMid
+        });
+      }
     }
-    drawPointer(angA, colBlue, true);
-    drawPointer(angB, colRed, false);
-    ctx.globalAlpha = 1;
 
-    ctx.fillStyle = colMuted;
-    ctx.font = `600 ${(10.4 * s).toFixed(1)}px 'IBM Plex Mono', monospace`;
-    ctx.fillText("QWEN3.5-0.8B", cx, cy - 18 * s);
-    ctx.fillStyle = colInk;
-    ctx.font = `700 ${(22 * s).toFixed(1)}px 'Bricolage Grotesque', sans-serif`;
-    ctx.fillText("43,008", cx, cy + 2 * s);
-    ctx.fillStyle = colMuted;
-    ctx.font = `600 ${(9.6 * s).toFixed(1)}px 'IBM Plex Mono', monospace`;
-    ctx.fillText("SHARED COLUMNS", cx, cy + 20 * s);
+    segQuads.sort((a, b) => a.rz - b.rz);
+
+    let hubDrawn = false;
+    function drawCenterCore() {
+      hubDrawn = true;
+      ctx.save();
+      ctx.beginPath();
+      for (let i = 0; i <= 64; i++) {
+        const th = (i / 64) * TWO_PI;
+        const p = proj(0.258 * Math.cos(th), 0.258 * Math.sin(th), dishZ(0.258), M, cx, cy, Rpx);
+        if (i === 0) ctx.moveTo(p.px, p.py); else ctx.lineTo(p.px, p.py);
+      }
+      ctx.closePath();
+      ctx.fillStyle = P.bgHex;
+      ctx.globalAlpha = 0.90;
+      ctx.fill();
+      ctx.globalAlpha = 1.0;
+      ctx.strokeStyle = P.ringActive;
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      const s = Math.min(1, cssW / 354);
+      haloText("QWEN3.5-0.8B", hubP.px, hubP.py - 10.5 * s, `600 ${(8.1 * s).toFixed(1)}px 'IBM Plex Mono', monospace`, P.ink3, "center", P.bgHex, 3.4);
+      haloText("43,008",       hubP.px, hubP.py + 0.5 * s,  `700 ${(15.2 * s).toFixed(1)}px 'Bricolage Grotesque', sans-serif`, P.ink, "center", P.bgHex, 3.8);
+      haloText("SHARED COLS",  hubP.px, hubP.py + 10.8 * s, `600 ${(7.7 * s).toFixed(1)}px 'IBM Plex Mono', monospace`, P.ink3, "center", P.bgHex, 3.4);
+      ctx.restore();
+    }
+
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    for (let i = 0; i < segQuads.length; i++) {
+      const q = segQuads[i];
+      if (!hubDrawn && q.rz > hubP.rz) drawCenterCore();
+
+      const absV = Math.abs(q.v);
+      const tInt = Math.min(1, Math.max(0, (absV - 0.020) / 0.14));
+      const smoothInt = tInt * tInt * (3 - 2 * tInt);
+
+      if (smoothInt > 0.04) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(q.b0.px, q.b0.py);
+        ctx.lineTo(q.b1.px, q.b1.py);
+        ctx.lineTo(q.w1.px, q.w1.py);
+        ctx.lineTo(q.w0.px, q.w0.py);
+        ctx.closePath();
+        ctx.fillStyle = q.v > 0 ? P.blueFill : P.redFill;
+        ctx.globalAlpha = smoothInt;
+        ctx.fill();
+        ctx.restore();
+      }
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(q.w0.px, q.w0.py);
+      ctx.lineTo(q.w1.px, q.w1.py);
+      ctx.strokeStyle = q.v > 0 ? P.blueStroke : P.redStroke;
+      ctx.globalAlpha = 0.18 + 0.82 * smoothInt;
+      ctx.lineWidth = 0.95 + 1.45 * Math.min(1, absV * 0.95);
+      ctx.stroke();
+      ctx.restore();
+    }
+    if (!hubDrawn) drawCenterCore();
+
+    // 4. Symmetric constant-speed Blue & Red orbs gliding along the outer dual rim tracks
+    function drawOrbitOrb(ang, dirSign, rOrb, zOrb, col, glowCol) {
+      ctx.save();
+      // Smoothly tapered tangential comet wake trailing behind each orb
+      for (let k = 0; k < 14; k++) {
+        const u0 = k / 14, u1 = (k + 1) / 14;
+        const a0 = ang - dirSign * 0.40 * (1 - u0);
+        const a1 = ang - dirSign * 0.40 * (1 - u1);
+        const p0 = proj(rOrb * Math.cos(a0), rOrb * Math.sin(a0), zOrb, M, cx, cy, Rpx);
+        const p1 = proj(rOrb * Math.cos(a1), rOrb * Math.sin(a1), zOrb, M, cx, cy, Rpx);
+        ctx.beginPath();
+        ctx.moveTo(p0.px, p0.py);
+        ctx.lineTo(p1.px, p1.py);
+        ctx.strokeStyle = glowCol;
+        ctx.globalAlpha = u1 * u1;
+        ctx.lineWidth = 0.8 + 1.6 * u1;
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1.0;
+
+      const ph = proj(rOrb * Math.cos(ang), rOrb * Math.sin(ang), zOrb, M, cx, cy, Rpx);
+      ctx.beginPath();
+      ctx.arc(ph.px, ph.py, 3.2 * ph.s * 0.88, 0, TWO_PI);
+      ctx.fillStyle = col;
+      ctx.fill();
+      ctx.strokeStyle = P.bgHex;
+      ctx.lineWidth = 1.25;
+      ctx.stroke();
+      ctx.restore();
+    }
+    drawOrbitOrb(angBlue, -1, rimOutR, rimOutZ, P.blueStroke, P.blueGlow);
+    drawOrbitOrb(angRed,   1, rimInR,  rimInZ,  P.redStroke,  P.redGlow);
+
+    // 5. Spacious radial layer ruler along 10:15 diagonal: full "Layer 19" -> "16" -> "12" -> "8"
+    const rulerTh = 2.40 - spin;
+    [
+      { r: ringGeom(0).r + 0.015,  txt: "8",        hi: false },
+      { r: ringGeom(4).r,          txt: "12",       hi: false },
+      { r: ringGeom(8).r,          txt: "16",       hi: true  },
+      { r: ringGeom(11).r + 0.025, txt: "Layer 19", hi: true  }
+    ].forEach(({ r, txt, hi }) => {
+      const p = proj(r * Math.cos(rulerTh), r * Math.sin(rulerTh), dishZ(r), M, cx, cy, Rpx);
+      haloText(txt, p.px, p.py, "600 9.0px 'IBM Plex Mono', monospace", hi ? P.ink : P.ink3, "center", P.bgHex, 4.0);
+    });
+
+    ctx.restore();
+  }
+
+  function frame(ts) {
+    raf = 0;
+    const dt = Math.min(64, Math.max(1, ts - lastTs));
+    lastTs = ts;
+
+    if (!reducedMotion) {
+      const dtSec = dt / 1000;
+      carrierPhase += dtSec * 0.95;
+      if (!dragActive) {
+        spin += dtSec * 0.068;
+      }
+      const rate = (tRound > 2.8 && tRound < 4.6) ? 0.65 : 0.95;
+      tRound = (tRound + dtSec * rate) % 16.2;
+    }
+    draw();
+
+    if (inView && !document.hidden && (!reducedMotion || dragActive)) {
+      raf = requestAnimationFrame(frame);
+    }
+  }
+
+  function kick() {
+    if (!raf && inView && !document.hidden) {
+      lastTs = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
   }
 
   /* Hover + Mobile Tap Toggle for Core-Ring Info Popover */
   const wrap = document.getElementById("hero-lattice");
   const btn = document.getElementById("ring-info-btn");
-  const ringBox = document.getElementById("hero-ring-box");
   const jump = document.getElementById("ring-jump");
   function setOpen(v) {
     if (!wrap || !btn) return;
@@ -2719,12 +3037,11 @@ Return ONLY one JSON object per turn.</pre>
       e.stopPropagation();
       setOpen(!wrap.classList.contains("is-open"));
     });
-    if (ringBox) {
-      ringBox.addEventListener("click", e => {
-        e.stopPropagation();
-        setOpen(!wrap.classList.contains("is-open"));
-      });
-    }
+    host.addEventListener("click", e => {
+      if (dragMoved) return;
+      e.stopPropagation();
+      setOpen(!wrap.classList.contains("is-open"));
+    });
     if (jump) jump.addEventListener("click", () => setOpen(false));
     document.addEventListener("click", e => {
       if (wrap.classList.contains("is-open") && !wrap.contains(e.target)) setOpen(false);
@@ -2734,21 +3051,17 @@ Return ONLY one JSON object per turn.</pre>
     });
   }
 
-  let last = 0;
-  function loop(now) {
-    raf = 0; if (!W) return;
-    const dt = Math.min(50, now - (last || now)); last = now;
-    step(dt); draw();
-    if (visible && !document.hidden) raf = requestAnimationFrame(loop);
+  if ("ResizeObserver" in window) new ResizeObserver(resize).observe(host);
+  else window.addEventListener("resize", resize);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(es => { inView = es[0].isIntersecting; kick(); }).observe(host);
   }
-  function kick() { if (!raf && visible && !document.hidden) { last = 0; raf = requestAnimationFrame(loop); } }
-  if ("ResizeObserver" in window) new ResizeObserver(() => { resize(); kick(); }).observe(host);
-  else window.addEventListener("resize", () => { resize(); kick(); });
-  if ("IntersectionObserver" in window) new IntersectionObserver(es => { visible = es[0].isIntersecting; kick(); }).observe(host);
-  new MutationObserver(() => { syncColors(); if (!raf) draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  new MutationObserver(() => { draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   document.addEventListener("visibilitychange", kick);
-  resize(); kick();
-})();
+
+  resize();
+  kick();
+});
 
 /* 4b. Figure 1 Dual-Canvas Arena Replay (1984 Classic Core War vs. 2026 Neural Core War) */
 (() => {
@@ -3130,11 +3443,11 @@ Return ONLY one JSON object per turn.</pre>
     const rObj = beat < 4 ? ROUNDS[beat] : null;
     let ports = { a: { x: 198, y: 45 }, b: { x: W - 198, y: 45 } };
     if (beat < 4) {
-      rr(ctxN, 68, 2, W - 80, 19, 4, P.frozenBg, P.frozenStroke, 1, [4, 3]);
+      rr(ctxN, 74, 2, W - 86, 19, 4, P.frozenBg, P.frozenStroke, 1, [4, 3]);
       ctxN.fillStyle = P.ink3;
       ctxN.font = "600 11.6px 'IBM Plex Mono', monospace";
       ctxN.textAlign = "center";
-      ctxN.fillText("[Frozen Input Layers 00–07 · Token Embeddings]", 68 + (W - 80) * 0.5, 15.5);
+      ctxN.fillText("[Frozen Input Layers 00–07 · Token Embeddings]", 74 + (W - 86) * 0.5, 15.5);
       ports = drawEmitterPorts(ctxN, W, 25, P, rObj.aMoves.length > 0, rObj.bMoves.length > 0);
     } else {
       rr(ctxN, 12, 4, W - 24, 36, 6, P.blueSoft, P.blue, 1.4);
@@ -3144,16 +3457,16 @@ Return ONLY one JSON object per turn.</pre>
       ctxN.fillText("📥 Everyday Chat Prompt → “Practical advice for an outdoor tea break?”", W * 0.5, 26.5);
     }
 
-    const gL = 68, gT = 49, gW = W - 80, gH = 156;
+    const gL = 74, gT = 49, gW = W - 86, gH = 156;
     const cw = gW / COLS, ch = gH / MLP_ROWS;
 
     for (let l = 8; l <= 19; l++) {
       const r = l - 8;
       const hot = l >= 16;
       ctxN.fillStyle = hot ? P.ink : P.ink3;
-      ctxN.font = `${hot ? 700 : 600} 10.6px 'IBM Plex Mono', monospace`;
+      ctxN.font = `${hot ? 700 : 600} 10.4px 'IBM Plex Mono', monospace`;
       ctxN.textAlign = "right";
-      ctxN.fillText("L" + String(l).padStart(2, "0"), gL - 9, gT + (r + 0.78) * ch);
+      ctxN.fillText("Layer " + String(l).padStart(2, "0"), gL - 8, gT + (r + 0.78) * ch);
     }
 
     const mlpLookup = {};
@@ -3213,17 +3526,17 @@ Return ONLY one JSON object per turn.</pre>
     }
 
     if (beat < 4) {
-      rr(ctxN, 68, H - 24, W - 80, 20, 4, P.frozenBg, P.frozenStroke, 1, [4, 3]);
+      rr(ctxN, 74, H - 24, W - 86, 20, 4, P.frozenBg, P.frozenStroke, 1, [4, 3]);
       ctxN.fillStyle = P.ink3;
       ctxN.font = "600 11.6px 'IBM Plex Mono', monospace";
       ctxN.textAlign = "center";
-      ctxN.fillText("[Frozen Output Layers 20–23 · Vocabulary Head]", 68 + (W - 80) * 0.5, H - 10);
+      ctxN.fillText("[Frozen Output Layers 20–23 · Vocabulary Head]", 74 + (W - 86) * 0.5, H - 10);
     } else if (p < 0.48) {
-      rr(ctxN, 68, H - 24, W - 80, 20, 4, P.frozenBg, P.frozenStroke, 1, [4, 3]);
+      rr(ctxN, 74, H - 24, W - 86, 20, 4, P.frozenBg, P.frozenStroke, 1, [4, 3]);
       ctxN.fillStyle = P.ink3;
       ctxN.font = "600 11.6px 'IBM Plex Mono', monospace";
       ctxN.textAlign = "center";
-      ctxN.fillText("Forward pass running through steered columns…", 68 + (W - 80) * 0.5, H - 10);
+      ctxN.fillText("Forward pass running through steered columns…", 74 + (W - 86) * 0.5, H - 10);
     } else {
       rr(ctxN, 12, H - 26, W - 24, 23, 5, P.redSoft, P.red, 1.4);
       ctxN.fillStyle = P.red;
@@ -3318,7 +3631,7 @@ Return ONLY one JSON object per turn.</pre>
 
 /* Inline 100-Neuron Clash Player */
 (() => {
-  const D = {"n_c":100,"n_worlds":24,"depth":15,"cols":[[14,2507],[15,449],[15,577],[15,1046],[15,1261],[15,1276],[15,1301],[15,1572],[15,2725],[15,3411],[16,247],[16,406],[16,620],[16,747],[16,993],[16,1036],[16,1133],[16,1532],[16,1753],[16,1838],[16,2475],[16,2561],[16,3418],[17,1],[17,78],[17,121],[17,475],[17,599],[17,874],[17,1626],[17,1797],[17,2178],[17,2511],[17,2686],[17,2765],[17,2819],[17,2895],[17,3490],[18,6],[18,8],[18,17],[18,21],[18,27],[18,37],[18,63],[18,109],[18,115],[18,179],[18,740],[18,1140],[18,1148],[18,1193],[18,1553],[18,1725],[18,1789],[18,1816],[18,1948],[18,2031],[18,2215],[18,2261],[18,2307],[18,2347],[18,2632],[18,2668],[18,2686],[18,2929],[18,3035],[18,3065],[18,3257],[18,3449],[19,0],[19,1],[19,3],[19,13],[19,24],[19,31],[19,55],[19,68],[19,289],[19,359],[19,589],[19,806],[19,983],[19,988],[19,1452],[19,1740],[19,1852],[19,2023],[19,2251],[19,2384],[19,2520],[19,2581],[19,2793],[19,2945],[19,3098],[19,3103],[19,3268],[19,3361],[19,3390],[19,3401]],"xs":[172.0,189.39,206.79,224.18,241.58,258.97,276.36,293.76,311.15,328.55,345.94,363.33,380.73,398.12,415.52,432.91,450.3,467.7,485.09,502.48,519.88,537.27,554.67,572.06,589.45,606.85,624.24,641.64,659.03,676.42,693.82,711.21,728.61,746.0,763.39,780.79,798.18,815.58,832.97,850.36,867.76,885.15,902.55,919.94,937.33,954.73,972.12,989.52,1006.91,1024.3,1041.7,1059.09,1076.48,1093.88,1111.27,1128.67,1146.06,1163.45,1180.85,1198.24,1215.64,1233.03,1250.42,1267.82,1285.21,1302.61,1320.0,1337.39,1354.79,1372.18,1389.58,1406.97,1424.36,1441.76,1459.15,1476.55,1493.94,1511.33,1528.73,1546.12,1563.52,1580.91,1598.3,1615.7,1633.09,1650.48,1667.88,1685.27,1702.67,1720.06,1737.45,1754.85,1772.24,1789.64,1807.03,1824.42,1841.82,1859.21,1876.61,1894.0],"tick_idxs":[0,9,14,22,27,32,37,44,49,57,63,69,74,79,85,91,99],"signed":[[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[-0.2973,0.0,-0.4444,0.0,-0.2973,0.0,0.5,0.0,0.0,0.0,0.5,0.0,-0.2626,0.0,-0.2202,0.0,0.0,-0.2626,-0.2202,0.0,0.162,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.2087,0.0,0.0,-0.2626,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.55,0.0,0.0,-0.3859,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.3854,0.0,-0.2626,0.0,0.6157,0.0,-0.2626,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.3854,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.4497,0.0],[-0.2973,0.0,-0.0015,0.0,-0.2973,0.1019,0.5,0.2438,-0.8338,0.0,0.6,0.0,0.3854,0.0,0.1454,0.0,0.0,0.3854,0.1454,0.0,0.0604,0.0,0.75,0.0,0.0,0.0,0.0,0.2438,0.0,0.0,-0.3473,0.0,0.0,0.3854,0.0,0.0,0.1337,0.8,-0.5432,0.0,0.0,-0.55,0.0,0.0,0.1244,0.6,-0.8,0.0,-0.7,0.2438,0.0,0.0,-0.4,0.0,-0.2643,0.0,0.0,0.1242,0.0,0.3854,0.0,-0.1304,-0.2,0.3854,0.0,0.0,-0.1204,0.0,0.0,0.85,-0.0984,0.4846,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3314,0.0,0.1242,0.0,0.0,0.1942,0.0,0.0,-0.875,0.0,0.0,0.0,-0.8338,-0.65,0.3811,-0.02,0.0],[-0.2973,-0.3,-0.2147,0.0,-0.2973,0.1019,0.54,-0.0163,-0.2452,0.0,0.67,0.0,-0.2128,0.0,-0.4958,-0.1849,0.0,-0.2128,-0.4958,0.0,-0.5081,0.0,0.75,0.0,0.0,0.0,0.0,-0.0163,0.0,0.0,-0.3473,0.0,-0.6076,-0.2128,0.0,-0.35,0.1337,1.0,-0.7211,0.0,0.0,-0.55,0.0,0.0,-0.4273,0.67,-0.1,0.0,-0.25,-0.0163,0.0,0.0,-0.15,0.0,-0.2643,0.0,0.0,-0.5468,0.0,-0.2128,0.0,-0.1304,-0.2,-0.2128,0.0,0.0,0.0695,0.0,0.0,0.85,-0.047,0.521,0.5,0.0,-0.6076,0.0,0.0,0.0,0.0,0.0,0.0,-0.4027,0.0,-0.0733,0.0,-0.5468,0.0,0.0,0.1942,0.0,0.0,-0.0906,0.0,0.0,0.0,-0.2452,-0.25,0.3811,-0.2574,0.0],[0.0,-0.3,0.0313,0.4,0.0,-0.3755,0.37,0.3741,-0.2452,-0.1939,0.485,0.0,0.1273,0.0,0.2176,-0.1849,0.0,0.1273,0.2176,0.0,0.185,0.0,0.0,0.0,0.0,0.0,0.0,0.3741,-0.201,0.0,-0.3647,0.0,0.1133,0.1273,0.0,-0.35,-0.3766,1.0,-0.7211,-0.04,0.0,-0.55,0.0,0.0,0.3067,0.485,0.0,0.0,-0.25,0.3741,0.0,0.0,-0.15,0.0,-0.2643,-0.35,-0.45,0.1873,0.0,0.1273,0.0,0.4853,0.0,0.1273,0.0,-0.1385,-0.5747,0.0,0.0,0.85,0.033,0.0162,0.5,0.0,0.1133,0.0,0.0,0.0,0.0,0.0,0.0,-0.4027,0.0,0.3226,0.0,0.1873,0.0,-0.3,0.1942,0.0,0.0,0.0509,0.0,0.0,0.0,0.5395,-0.25,0.3811,0.0768,0.0],[0.0,0.0,-0.1221,0.4,0.0,-0.3755,-0.0,-0.0247,-0.2452,-0.1939,0.005,-0.8402,0.1273,0.0,-0.499,-0.1849,-0.0796,0.1273,-0.499,0.0,-0.5209,0.0,0.0,0.0,0.0,0.45,0.0,-0.0247,-0.201,0.0,-0.0388,0.0,-0.6063,0.1273,0.0,-0.2,-0.4768,0.15,0.1183,-0.22,0.0,-0.55,0.0,0.0,-0.417,0.005,0.0,0.6425,-0.25,-0.0247,0.0,0.0,-0.15,0.0,0.5766,0.0,0.0,-0.5365,0.0,0.1273,0.0,0.4853,0.0,0.1273,0.0,-0.1385,-0.5747,0.0,0.0,0.85,-0.0442,-0.1566,0.5,0.0,-0.6063,0.0,0.0,0.0,0.0,0.0,0.0,-0.4027,0.0,-0.2325,0.0,-0.5365,0.2,0.0,0.1942,0.0,0.0,0.0509,0.0,0.0,0.0,0.5395,-0.25,0.3811,-0.0857,0.0],[0.0,0.0,-0.1221,0.0,0.0,-0.0255,0.5,0.3491,-0.2452,-0.1939,0.805,-0.1483,0.3068,0.0,-0.2367,-0.1849,-0.1194,0.3068,-0.2367,0.0,-0.26,0.0,0.8,0.114,0.0,0.0,0.0,0.3491,-0.201,0.0,-0.0388,0.0,-0.3466,0.3068,0.0,-0.05,-0.0846,0.15,0.2862,-0.22,-0.4,-0.55,0.3864,0.0,-0.1615,0.855,0.0,0.0988,-0.25,0.3491,0.0,0.0,-0.15,0.0,0.6964,0.0,0.0,-0.2811,0.0,0.3068,-0.3886,0.4853,0.0,0.3068,0.0,-0.1385,-0.0269,0.0,-0.2275,0.85,-0.1144,0.1569,0.5,0.0,-0.3466,0.0,0.5,-0.1658,0.0,0.0,0.4,-0.4027,0.0,0.1534,0.0,-0.2811,0.2,0.0,0.1103,0.0,0.0,0.0509,0.3102,0.0,0.0,-0.049,-0.25,0.3811,0.0118,0.5],[0.0,0.0,-0.1221,-0.4,0.0,-0.0255,-0.0,0.4192,-0.2452,-0.1939,0.005,-0.1483,0.3466,0.0,0.1135,-0.1849,-0.1194,0.3466,0.1135,0.0,0.0912,0.35,0.1,-0.0509,0.0,0.0,0.0,0.4192,-0.201,0.0,-0.3859,0.0,0.0053,0.3466,0.0,-0.05,-0.3184,0.15,0.2961,-0.34,-0.7398,-0.55,0.3864,0.0,0.1906,0.005,0.0,0.0988,-0.25,0.4192,0.0,0.0,-0.15,0.0,0.7034,0.0,0.0,0.0711,0.35,0.3466,-0.3886,0.4853,0.0,0.3466,0.0,-0.1385,-0.3203,0.0,-0.2275,0.85,-0.1144,-0.0408,0.05,0.0,0.0053,0.0,0.7,-0.1658,0.35,0.0,0.4,-0.4027,0.0,-0.2156,0.0,0.0711,0.35,0.0,0.1103,0.0,0.0,0.0509,0.4343,0.0,0.1403,-0.049,-0.25,0.581,-0.1368,0.7],[0.0,0.0,-0.1221,0.0,0.0,-0.0255,0.5,0.3443,-0.2452,0.0374,0.805,-0.4942,0.3146,0.0,-0.4552,-0.1849,-0.1194,0.3146,-0.4552,0.0,-0.476,0.35,0.9,-0.0509,0.0,0.0,0.0,0.3443,-0.201,-0.5343,-0.4706,-0.85,-0.5633,0.3146,0.0,-0.05,-0.2239,0.15,0.2961,-0.34,-0.7398,-0.55,0.3864,0.0,-0.3756,0.855,0.0,0.0988,-0.25,0.3443,0.0,0.0,-0.15,0.0,0.0604,0.0,0.0,-0.4951,0.35,0.3146,-0.1943,-0.0979,-0.75,0.3146,-0.1498,-0.1385,-0.1304,0.0,-0.2275,0.85,-0.1144,-0.0798,0.05,0.0,-0.5633,-0.3,0.0,-0.6514,0.35,-0.1728,0.2,-0.4027,0.3,-0.0052,-0.65,-0.4951,0.35,0.0,0.1103,0.0,0.0,-0.3413,0.0,0.0,-0.2338,-0.049,-0.25,0.661,-0.0181,0.0],[0.0,0.0,-0.1221,0.0,0.0,-0.0255,0.625,0.3443,-0.7357,0.0374,1.005,-0.0988,0.3146,0.0,-0.1665,-0.601,0.4945,0.3146,-0.1665,0.0,-0.1876,0.35,1.1,0.0691,0.0,0.0,0.0,0.3443,-0.201,-0.5343,-0.1068,-1.4,-0.2751,0.3146,0.0,0.07,-0.2239,0.15,0.2961,-0.01,-0.7398,-0.55,0.3864,0.0,-0.0894,1.0675,0.0,0.0,-0.25,0.3443,0.0,0.0,-0.15,-0.5842,-0.0583,0.0,0.0,-0.2089,0.35,0.3146,-0.1943,-0.0979,-0.75,0.3146,-0.1498,-0.1385,0.2165,0.0,-0.2275,0.85,-0.0582,-0.129,0.05,-0.85,-0.2751,-0.3,0.0,-0.6549,0.35,-0.5222,0.2,-0.4027,-0.1431,0.341,-0.65,-0.2089,0.35,0.0,0.1103,0.2,0.0,-0.0962,0.0,0.0,-0.2338,-0.8829,-0.75,0.661,-0.0181,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.5625,0.3443,-0.7357,-0.0664,0.355,0.0415,0.3146,-0.75,-0.1467,-0.601,-0.1194,0.3146,-0.1467,0.84,-0.1711,0.0,1.1,0.0691,-0.85,0.0,0.84,0.3443,-0.1436,-0.5343,0.2843,-1.65,-0.2531,0.3146,0.84,0.203,0.076,0.15,0.2961,-0.01,-0.7398,-0.55,0.0,0.743,-0.0659,0.4113,0.0,-0.0702,-0.25,0.3443,0.84,0.0,-0.15,-0.3408,-0.0583,0.0,0.0,-0.1855,0.0,0.3146,-0.1943,-0.0979,-0.75,0.3146,-0.1498,-0.1302,0.2165,-0.7859,-0.2275,0.85,-0.0142,-0.2136,0.05,-0.55,-0.2531,-0.3,0.0,-0.6549,0.0,-0.9016,0.2,-0.4027,0.0825,0.0034,-0.65,-0.1855,0.15,0.0,0.1103,0.85,0.0,-0.0396,0.0,0.0,-0.2338,-0.8829,-0.75,0.2611,-0.0181,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.7625,0.3443,-0.7357,-0.0664,0.53,0.0415,0.1277,-0.75,0.0572,-0.601,-0.1194,0.1277,0.0572,1.24,0.0322,0.0,0.5,-0.5485,-0.85,0.0,1.24,0.3443,-0.1436,0.0445,0.5381,-1.725,-0.0483,0.1277,1.24,0.203,-0.0577,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,0.8915,0.1393,0.6113,0.0,-0.0702,-0.25,0.3443,1.24,0.0,-0.15,-0.2921,-0.0583,0.0,0.0,0.0198,0.0,0.1277,-0.1943,-0.0979,-0.75,0.1277,-0.1498,-0.1302,0.2122,-0.7859,-0.2275,0.85,-0.0088,-0.189,0.05,-0.5,-0.0483,0.35,0.0,-0.8962,0.0,-1.0014,0.2,-0.4027,0.0825,-0.0233,-0.65,0.0198,0.15,0.0,0.1103,0.85,-0.65,-0.0396,-0.2482,-0.65,-0.2338,-0.8829,-0.75,0.3011,0.4963,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.8375,0.3443,-0.7357,-0.0664,0.6675,0.0415,0.1277,-0.75,-0.1863,-0.601,-0.1194,0.1277,-0.1863,1.74,-0.206,0.0,0.5,-0.5485,-0.85,0.0,1.24,0.3443,-0.1436,0.0445,0.7629,-1.75,-0.2937,0.1277,1.24,0.203,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,0.9645,-0.1093,0.7613,0.0,-0.0702,-0.25,0.3443,1.24,0.6,-0.15,-0.2921,-0.1276,0.0,0.0,-0.2288,0.0,0.1277,-0.1943,-0.0979,-0.75,0.1277,-0.0384,0.0143,0.055,-0.7859,-0.2275,0.85,0.0082,-0.189,0.05,-0.5,-0.2937,0.35,0.0,-0.9736,0.0,-0.5522,0.2,-0.4027,0.2263,-0.0602,-0.65,-0.2288,0.15,0.0,-0.0296,0.85,-0.65,-0.0396,-0.062,-0.65,-0.2338,-0.8829,-0.75,0.3011,-0.3458,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.8875,0.3443,-0.7357,-0.0664,0.7675,-0.6999,0.1277,-0.75,-0.4231,-0.1849,-0.1194,0.1277,-0.4231,1.74,-0.4387,0.0,0.5,-0.5485,-0.85,0.0,1.24,0.3443,-0.1436,0.0445,0.7431,-1.7625,-0.5324,0.1277,1.24,-0.097,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,1.1626,0.0431,0.8613,0.0,-0.0702,-0.25,0.3443,1.24,0.6,-0.15,-0.6486,-0.1276,0.0,0.0,-0.4703,0.0,0.1277,0.1254,-0.0979,-0.75,0.1277,0.0575,0.0143,-0.1237,-0.2312,-0.2275,0.2,0.035,-0.0874,0.05,-0.45,-0.5324,0.35,0.0,-0.9463,0.0,-0.5522,0.2,-0.4027,-0.1007,-0.097,-0.65,-0.4703,0.15,0.0,0.0161,0.85,-0.65,-0.873,-0.062,-0.65,-0.2338,-0.383,-0.75,0.0912,0.0601,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.875,0.0355,-0.7357,-0.0664,0.0925,-0.6999,0.0031,-0.75,0.4164,-0.1849,-0.1194,0.0031,0.4164,1.74,0.3597,0.0,0.0,-0.5485,-0.85,0.0,1.24,0.0355,-0.1436,0.0445,0.982,-1.7625,0.321,0.0031,1.24,-0.097,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,1.1626,0.5819,0.0862,0.0,-0.0702,-0.25,0.0355,1.24,0.6,-0.15,-0.6486,-0.1276,0.0,0.0,0.4106,0.0,0.0031,0.1254,-0.0979,-0.75,0.0031,0.0575,0.0143,-0.5443,-0.2312,-0.1183,0.2,0.0305,0.1477,0.05,-0.45,0.321,-0.4,0.0,-0.9411,0.0,-0.2526,0.2,-0.4027,-0.0773,-0.2575,-0.65,0.4106,0.19,0.0,-0.2267,0.55,-0.65,-0.873,-0.062,-0.65,-0.2338,-0.383,-0.75,-0.0188,0.0601,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.875,0.0355,-0.3358,-0.0664,0.0925,-0.5022,0.0031,-0.75,-0.3168,-0.1849,-0.1194,0.0031,-0.3168,1.74,-0.3587,0.0,0.0,-0.5485,-0.85,0.0,1.24,0.0355,-0.0436,0.0445,0.8865,-1.7625,-0.416,0.0031,1.24,-0.097,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,1.1626,-0.439,0.0862,0.0,-0.0702,-0.25,0.0355,1.24,0.6,-0.15,-0.6486,-0.1408,0.0,0.0,-0.3326,0.0,0.0031,0.1254,-0.0979,-0.75,0.0031,0.0575,-0.1035,-0.6034,-0.2312,-0.1183,0.2,-0.0809,0.1477,0.05,-0.45,-0.416,-0.4,0.5,-1.0464,0.0,0.0469,0.2,0.3079,-0.0773,-0.1267,-0.65,-0.3326,-0.01,0.0,-0.2267,0.2,-0.65,-0.5788,0.2482,-0.65,-0.2338,-0.0831,-0.75,-0.0188,0.2988,0.5]],"hit_a":[[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.3,0.0,0.3,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.45,0.0,0.0,0.2,0.0,0.3,0.0,0.0,0.1,0.0,0.65,0.0,0.55,0.0,0.0,0.65,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.15,0.0,0.0,0.65,0.0,0.0,0.2,0.8,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.1,0.8,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.65,0.0,0.0,0.0,0.65,0.0,0.0,0.2,0.0,0.0,0.85,0.14,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0,0.55,0.0,0.0,0.2,0.0,0.0,0.7,0.0,0.0,0.0,0.0,0.0,0.4,0.45,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.025,0.85,0.0,0.07,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.07,0.1,0.0,0.45,0.025,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.045,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.425,0.0,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.65,0.0,0.0,0.0],[0.3,0.0,0.25,0.4,0.3,0.25,0.1,0.4,0.0,0.2,0.15,0.0,0.45,0.0,0.73,0.0,0.0,0.45,0.73,0.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.35,0.0,0.0,0.0,0.73,0.45,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.73,0.15,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.73,0.0,0.45,0.0,0.65,0.2,0.45,0.0,0.35,0.25,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.8,0.0,0.0,0.35,0.0],[0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.0,0.85,0.2,0.0,0.03,0.0,0.1,0.2,0.03,0.0,0.03,0.0,0.0,0.0,0.0,0.45,0.0,0.025,0.0,0.0,0.08,0.0,0.03,0.2,0.0,0.15,0.0,0.0,0.85,0.0,0.0,0.0,0.0,0.0,0.03,0.0,0.0,0.65,0.0,0.025,0.0,0.0,0.0,0.0,0.85,0.35,0.45,0.03,0.0,0.2,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.15,0.0,0.0,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.03,0.2,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0],[0.0,0.0,0.0,0.0,0.0,0.35,0.5,0.4,0.0,0.0,0.8,0.15,0.18,0.0,0.55,0.0,0.05,0.18,0.55,0.0,0.55,0.0,0.8,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.55,0.18,0.0,0.15,0.4,0.0,0.17,0.0,0.4,0.0,0.4,0.0,0.55,0.85,0.0,0.1,0.0,0.4,0.0,0.0,0.0,0.0,0.17,0.0,0.0,0.55,0.0,0.18,0.0,0.0,0.0,0.18,0.0,0.0,0.45,0.0,0.0,0.0,0.1,0.32,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.04,0.0,0.32,0.0,0.0,0.04,0.32,0.0,0.32,0.35,0.1,0.2,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.32,0.04,0.0,0.0,0.0,0.0,0.01,0.0,0.35,0.0,0.0,0.0,0.32,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.01,0.0,0.0,0.32,0.35,0.04,0.0,0.0,0.0,0.04,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.05,0.45,0.0,0.32,0.0,0.0,0.0,0.35,0.0,0.0,0.0,0.0,0.075,0.0,0.32,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.2,0.0,0.0],[0.0,0.0,0.0,0.4,0.0,0.0,0.5,0.075,0.0,0.0,0.8,0.35,0.03,0.0,0.08,0.0,0.0,0.03,0.08,0.0,0.08,0.0,0.8,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.08,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.85,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.0,0.03,0.2,0.69,0.0,0.03,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.08,0.0,0.7,0.0,0.0,0.18,0.2,0.0,0.3,0.25,0.0,0.08,0.0,0.0,0.0,0.0,0.0,0.4,0.7,0.0,0.0,0.0,0.0,0.08,0.15,0.7],[0.0,0.0,0.0,0.0,0.0,0.0,0.125,0.0,0.0,0.0,0.2,0.1,0.0,0.0,0.4,0.0,0.0,0.0,0.4,0.0,0.4,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0,0.4,0.0,0.0,0.12,0.0,0.0,0.0,0.33,0.0,0.0,0.0,0.0,0.4,0.2125,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.4,0.0,0.0,0.0,0.0,0.35,0.0,0.0,0.0,0.4,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.25,0.0,0.0,0.0,0.0625,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.24,0.0,0.65,0.0,0.24,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.55,0.0,0.24,0.0,0.0,0.133,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.1062,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.38,0.0,0.0,0.25,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.375,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.4,0.0,0.4,0.0,0.0,0.65,0.0,0.0,0.0,0.0,0.0,0.65,0.35,0.0,0.4,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.3,0.0,0.0,0.0,0.4,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.04,0.0,0.0,0.0,0.4,0.65,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.65,0.0,0.4,0.65,0.0,0.0,0.0,0.04,0.65,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.1375,0.0,0.0,0.0,0.16,0.0,0.0,0.0,0.16,0.0,0.16,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.16,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.16,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.16,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.2,0.0,0.0,0.0,0.035,0.0,0.0,0.0,0.16,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.15,0.0,0.0,0.16,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.05,0.0,0.0,0.0,0.1,0.75,0.0,0.0,0.0,0.45,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.525,0.0,0.0,0.0,0.0,0.0,0.0,0.425,0.0,0.0,0.0,0.0,0.0,0.075,0.6,0.0,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.125,0.0,0.0,0.85,0.0,0.0,0.0,0.6,0.0,0.04,0.425,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0125,0.0,0.0,0.0,0.025,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.6,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.025,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.24,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.6,0.04,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.48,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.15,0.35,0.0,0.3,0.0,0.0,0.0,0.36,0.0,0.0,0.25,0.0]],"hit_b":[[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.3,0.0,0.45,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.55,0.0,0.0,0.55,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.55,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.0,0.0,0.0,0.0,0.0,0.26,0.0,0.0,0.0,0.26,0.0,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.4,0.0,0.5,0.0,0.0,0.24,0.0,0.0,0.0,0.75,0.2,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.85,0.65,0.0,0.0,0.0],[0.0,0.3,0.3,0.0,0.0,0.0,0.0,0.3,0.25,0.0,0.0,0.0,0.6,0.0,0.75,0.2,0.0,0.6,0.75,0.0,0.7,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.7,0.6,0.0,0.35,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.8,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.6,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.8,0.0,0.0,0.0,0.25,0.25,0.0,0.3,0.0],[0.0,0.0,0.0,0.0,0.0,0.35,0.27,0.0,0.0,0.0,0.335,0.0,0.12,0.0,0.04,0.0,0.0,0.12,0.04,0.0,0.04,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.04,0.12,0.0,0.0,0.35,0.0,0.0,0.04,0.0,0.0,0.0,0.0,0.04,0.335,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.35,0.45,0.04,0.0,0.12,0.0,0.0,0.0,0.12,0.0,0.12,0.5,0.0,0.0,0.0,0.08,0.65,0.0,0.0,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.0,0.3,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.35,0.0,0.0,0.0,0.37,0.4,0.0,0.0,0.48,0.0,0.2,0.0,0.75,0.0,0.0,0.2,0.75,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.3,0.0,0.75,0.2,0.0,0.0,0.15,0.85,0.0,0.18,0.0,0.0,0.0,0.0,0.75,0.48,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.2,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.35,0.0],[0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.0,0.0,0.28,0.0,0.0,0.0,0.28,0.0,0.28,0.0,0.0,0.12,0.0,0.45,0.0,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.65,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.5,0.18,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.12,0.0,0.0,0.0,0.5,0.0,0.0,0.6,0.0,0.0,0.0,0.5],[0.0,0.0,0.0,0.4,0.0,0.0,0.5,0.0,0.0,0.0,0.8,0.0,0.0,0.0,0.08,0.0,0.0,0.0,0.08,0.0,0.08,0.0,0.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.35,0.0,0.08,0.0,0.0,0.0,0.35,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.08,0.85,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.08,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.15,0.2],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.7,0.0,0.0,0.06,0.0,0.5,0.0,0.0,0.06,0.5,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.1,0.85,0.5,0.06,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.0,0.0,0.5,0.0,0.06,0.0,0.0,0.75,0.06,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.3,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.5,0.0,0.0,0.12,0.45,0.65,0.0,0.12,0.0,0.12,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.06,0.55,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.08,0.1,0.0,0.0,0.12,0.0,0.0,0.004,0.0,0.0,0.0,0.0,0.45,0.0,0.0,0.12,0.0,0.0,0.0,0.2,0.0,0.35,0.0,0.0,0.0,0.85,0.5,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.55,0.2,0.0,0.75,0.25,0.0,0.0,0.0,0.25,0.84,0.25,0.35,0.0,0.0,0.85,0.0,0.84,0.0,0.0,0.0,0.18,0.25,0.25,0.0,0.84,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.75,0.25,0.55,0.0,0.1,0.0,0.0,0.84,0.0,0.0,0.25,0.0,0.0,0.0,0.25,0.35,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.0,0.0,0.06,0.1,0.0,0.3,0.25,0.0,0.0,0.0,0.35,0.0,0.0,0.0,0.0,0.35,0.0,0.25,0.2,0.0,0.0,0.65,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.3,0.0,0.2,0.0,0.0,0.3,0.2,0.4,0.2,0.0,0.6,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.1,0.075,0.2,0.3,0.4,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.2,0.2,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.05,0.0,0.0,0.0,0.2,0.0,0.3,0.0,0.0,0.0,0.3,0.0,0.0,0.4,0.0,0.0,0.0,0.06,0.05,0.0,0.05,0.2,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.03,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.18,0.025,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.0,0.0,0.07,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.35,0.0,0.0,0.0,0.06,0.0,0.0,0.0,0.4,0.0,0.0,0.08,0.0,0.35,0.0,0.0,0.0,0.05,0.0,0.4,0.0,0.0,0.2,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.85,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.25,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.34,0.0125,0.25,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.05,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.3,0.0,0.0,0.65,0.03,0.0,0.0,0.05,0.25,0.0,0.0,0.03,0.0,0.0,0.0,0.0,0.35,0.05,0.0,0.25,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.38,0.0,0.0,0.65,0.0,0.2,0.0,0.4,0.0,0.0,0.2,0.4,0.0,0.4,0.0,0.5,0.0,0.0,0.0,0.0,0.38,0.0,0.0,0.0,0.0,0.4,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.75,0.0,0.0,0.0,0.38,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.2,0.0,0.0,0.0,0.2,0.0,0.0,0.5,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.4,0.75,0.0,0.06,0.0,0.3,0.0,0.0,0.0,0.2,0.0,0.4,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.0,0.0,0.75,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.45,0.0,0.0,0.0,0.04,0.0,0.0,0.0,0.75,0.0,0.5,0.11,0.0,0.3,0.0,0.75,0.0,0.15,0.0,0.75,0.2,0.0,0.15,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.5]]};
+  const D = window.__NCW_D = {"n_c":100,"n_worlds":24,"depth":15,"cols":[[14,2507],[15,449],[15,577],[15,1046],[15,1261],[15,1276],[15,1301],[15,1572],[15,2725],[15,3411],[16,247],[16,406],[16,620],[16,747],[16,993],[16,1036],[16,1133],[16,1532],[16,1753],[16,1838],[16,2475],[16,2561],[16,3418],[17,1],[17,78],[17,121],[17,475],[17,599],[17,874],[17,1626],[17,1797],[17,2178],[17,2511],[17,2686],[17,2765],[17,2819],[17,2895],[17,3490],[18,6],[18,8],[18,17],[18,21],[18,27],[18,37],[18,63],[18,109],[18,115],[18,179],[18,740],[18,1140],[18,1148],[18,1193],[18,1553],[18,1725],[18,1789],[18,1816],[18,1948],[18,2031],[18,2215],[18,2261],[18,2307],[18,2347],[18,2632],[18,2668],[18,2686],[18,2929],[18,3035],[18,3065],[18,3257],[18,3449],[19,0],[19,1],[19,3],[19,13],[19,24],[19,31],[19,55],[19,68],[19,289],[19,359],[19,589],[19,806],[19,983],[19,988],[19,1452],[19,1740],[19,1852],[19,2023],[19,2251],[19,2384],[19,2520],[19,2581],[19,2793],[19,2945],[19,3098],[19,3103],[19,3268],[19,3361],[19,3390],[19,3401]],"xs":[172.0,189.39,206.79,224.18,241.58,258.97,276.36,293.76,311.15,328.55,345.94,363.33,380.73,398.12,415.52,432.91,450.3,467.7,485.09,502.48,519.88,537.27,554.67,572.06,589.45,606.85,624.24,641.64,659.03,676.42,693.82,711.21,728.61,746.0,763.39,780.79,798.18,815.58,832.97,850.36,867.76,885.15,902.55,919.94,937.33,954.73,972.12,989.52,1006.91,1024.3,1041.7,1059.09,1076.48,1093.88,1111.27,1128.67,1146.06,1163.45,1180.85,1198.24,1215.64,1233.03,1250.42,1267.82,1285.21,1302.61,1320.0,1337.39,1354.79,1372.18,1389.58,1406.97,1424.36,1441.76,1459.15,1476.55,1493.94,1511.33,1528.73,1546.12,1563.52,1580.91,1598.3,1615.7,1633.09,1650.48,1667.88,1685.27,1702.67,1720.06,1737.45,1754.85,1772.24,1789.64,1807.03,1824.42,1841.82,1859.21,1876.61,1894.0],"tick_idxs":[0,9,14,22,27,32,37,44,49,57,63,69,74,79,85,91,99],"signed":[[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[-0.2973,0.0,-0.4444,0.0,-0.2973,0.0,0.5,0.0,0.0,0.0,0.5,0.0,-0.2626,0.0,-0.2202,0.0,0.0,-0.2626,-0.2202,0.0,0.162,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.2087,0.0,0.0,-0.2626,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.55,0.0,0.0,-0.3859,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.3854,0.0,-0.2626,0.0,0.6157,0.0,-0.2626,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.3854,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.4497,0.0],[-0.2973,0.0,-0.0015,0.0,-0.2973,0.1019,0.5,0.2438,-0.8338,0.0,0.6,0.0,0.3854,0.0,0.1454,0.0,0.0,0.3854,0.1454,0.0,0.0604,0.0,0.75,0.0,0.0,0.0,0.0,0.2438,0.0,0.0,-0.3473,0.0,0.0,0.3854,0.0,0.0,0.1337,0.8,-0.5432,0.0,0.0,-0.55,0.0,0.0,0.1244,0.6,-0.8,0.0,-0.7,0.2438,0.0,0.0,-0.4,0.0,-0.2643,0.0,0.0,0.1242,0.0,0.3854,0.0,-0.1304,-0.2,0.3854,0.0,0.0,-0.1204,0.0,0.0,0.85,-0.0984,0.4846,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3314,0.0,0.1242,0.0,0.0,0.1942,0.0,0.0,-0.875,0.0,0.0,0.0,-0.8338,-0.65,0.3811,-0.02,0.0],[-0.2973,-0.3,-0.2147,0.0,-0.2973,0.1019,0.54,-0.0163,-0.2452,0.0,0.67,0.0,-0.2128,0.0,-0.4958,-0.1849,0.0,-0.2128,-0.4958,0.0,-0.5081,0.0,0.75,0.0,0.0,0.0,0.0,-0.0163,0.0,0.0,-0.3473,0.0,-0.6076,-0.2128,0.0,-0.35,0.1337,1.0,-0.7211,0.0,0.0,-0.55,0.0,0.0,-0.4273,0.67,-0.1,0.0,-0.25,-0.0163,0.0,0.0,-0.15,0.0,-0.2643,0.0,0.0,-0.5468,0.0,-0.2128,0.0,-0.1304,-0.2,-0.2128,0.0,0.0,0.0695,0.0,0.0,0.85,-0.047,0.521,0.5,0.0,-0.6076,0.0,0.0,0.0,0.0,0.0,0.0,-0.4027,0.0,-0.0733,0.0,-0.5468,0.0,0.0,0.1942,0.0,0.0,-0.0906,0.0,0.0,0.0,-0.2452,-0.25,0.3811,-0.2574,0.0],[0.0,-0.3,0.0313,0.4,0.0,-0.3755,0.37,0.3741,-0.2452,-0.1939,0.485,0.0,0.1273,0.0,0.2176,-0.1849,0.0,0.1273,0.2176,0.0,0.185,0.0,0.0,0.0,0.0,0.0,0.0,0.3741,-0.201,0.0,-0.3647,0.0,0.1133,0.1273,0.0,-0.35,-0.3766,1.0,-0.7211,-0.04,0.0,-0.55,0.0,0.0,0.3067,0.485,0.0,0.0,-0.25,0.3741,0.0,0.0,-0.15,0.0,-0.2643,-0.35,-0.45,0.1873,0.0,0.1273,0.0,0.4853,0.0,0.1273,0.0,-0.1385,-0.5747,0.0,0.0,0.85,0.033,0.0162,0.5,0.0,0.1133,0.0,0.0,0.0,0.0,0.0,0.0,-0.4027,0.0,0.3226,0.0,0.1873,0.0,-0.3,0.1942,0.0,0.0,0.0509,0.0,0.0,0.0,0.5395,-0.25,0.3811,0.0768,0.0],[0.0,0.0,-0.1221,0.4,0.0,-0.3755,-0.0,-0.0247,-0.2452,-0.1939,0.005,-0.8402,0.1273,0.0,-0.499,-0.1849,-0.0796,0.1273,-0.499,0.0,-0.5209,0.0,0.0,0.0,0.0,0.45,0.0,-0.0247,-0.201,0.0,-0.0388,0.0,-0.6063,0.1273,0.0,-0.2,-0.4768,0.15,0.1183,-0.22,0.0,-0.55,0.0,0.0,-0.417,0.005,0.0,0.6425,-0.25,-0.0247,0.0,0.0,-0.15,0.0,0.5766,0.0,0.0,-0.5365,0.0,0.1273,0.0,0.4853,0.0,0.1273,0.0,-0.1385,-0.5747,0.0,0.0,0.85,-0.0442,-0.1566,0.5,0.0,-0.6063,0.0,0.0,0.0,0.0,0.0,0.0,-0.4027,0.0,-0.2325,0.0,-0.5365,0.2,0.0,0.1942,0.0,0.0,0.0509,0.0,0.0,0.0,0.5395,-0.25,0.3811,-0.0857,0.0],[0.0,0.0,-0.1221,0.0,0.0,-0.0255,0.5,0.3491,-0.2452,-0.1939,0.805,-0.1483,0.3068,0.0,-0.2367,-0.1849,-0.1194,0.3068,-0.2367,0.0,-0.26,0.0,0.8,0.114,0.0,0.0,0.0,0.3491,-0.201,0.0,-0.0388,0.0,-0.3466,0.3068,0.0,-0.05,-0.0846,0.15,0.2862,-0.22,-0.4,-0.55,0.3864,0.0,-0.1615,0.855,0.0,0.0988,-0.25,0.3491,0.0,0.0,-0.15,0.0,0.6964,0.0,0.0,-0.2811,0.0,0.3068,-0.3886,0.4853,0.0,0.3068,0.0,-0.1385,-0.0269,0.0,-0.2275,0.85,-0.1144,0.1569,0.5,0.0,-0.3466,0.0,0.5,-0.1658,0.0,0.0,0.4,-0.4027,0.0,0.1534,0.0,-0.2811,0.2,0.0,0.1103,0.0,0.0,0.0509,0.3102,0.0,0.0,-0.049,-0.25,0.3811,0.0118,0.5],[0.0,0.0,-0.1221,-0.4,0.0,-0.0255,-0.0,0.4192,-0.2452,-0.1939,0.005,-0.1483,0.3466,0.0,0.1135,-0.1849,-0.1194,0.3466,0.1135,0.0,0.0912,0.35,0.1,-0.0509,0.0,0.0,0.0,0.4192,-0.201,0.0,-0.3859,0.0,0.0053,0.3466,0.0,-0.05,-0.3184,0.15,0.2961,-0.34,-0.7398,-0.55,0.3864,0.0,0.1906,0.005,0.0,0.0988,-0.25,0.4192,0.0,0.0,-0.15,0.0,0.7034,0.0,0.0,0.0711,0.35,0.3466,-0.3886,0.4853,0.0,0.3466,0.0,-0.1385,-0.3203,0.0,-0.2275,0.85,-0.1144,-0.0408,0.05,0.0,0.0053,0.0,0.7,-0.1658,0.35,0.0,0.4,-0.4027,0.0,-0.2156,0.0,0.0711,0.35,0.0,0.1103,0.0,0.0,0.0509,0.4343,0.0,0.1403,-0.049,-0.25,0.581,-0.1368,0.7],[0.0,0.0,-0.1221,0.0,0.0,-0.0255,0.5,0.3443,-0.2452,0.0374,0.805,-0.4942,0.3146,0.0,-0.4552,-0.1849,-0.1194,0.3146,-0.4552,0.0,-0.476,0.35,0.9,-0.0509,0.0,0.0,0.0,0.3443,-0.201,-0.5343,-0.4706,-0.85,-0.5633,0.3146,0.0,-0.05,-0.2239,0.15,0.2961,-0.34,-0.7398,-0.55,0.3864,0.0,-0.3756,0.855,0.0,0.0988,-0.25,0.3443,0.0,0.0,-0.15,0.0,0.0604,0.0,0.0,-0.4951,0.35,0.3146,-0.1943,-0.0979,-0.75,0.3146,-0.1498,-0.1385,-0.1304,0.0,-0.2275,0.85,-0.1144,-0.0798,0.05,0.0,-0.5633,-0.3,0.0,-0.6514,0.35,-0.1728,0.2,-0.4027,0.3,-0.0052,-0.65,-0.4951,0.35,0.0,0.1103,0.0,0.0,-0.3413,0.0,0.0,-0.2338,-0.049,-0.25,0.661,-0.0181,0.0],[0.0,0.0,-0.1221,0.0,0.0,-0.0255,0.625,0.3443,-0.7357,0.0374,1.005,-0.0988,0.3146,0.0,-0.1665,-0.601,0.4945,0.3146,-0.1665,0.0,-0.1876,0.35,1.1,0.0691,0.0,0.0,0.0,0.3443,-0.201,-0.5343,-0.1068,-1.4,-0.2751,0.3146,0.0,0.07,-0.2239,0.15,0.2961,-0.01,-0.7398,-0.55,0.3864,0.0,-0.0894,1.0675,0.0,0.0,-0.25,0.3443,0.0,0.0,-0.15,-0.5842,-0.0583,0.0,0.0,-0.2089,0.35,0.3146,-0.1943,-0.0979,-0.75,0.3146,-0.1498,-0.1385,0.2165,0.0,-0.2275,0.85,-0.0582,-0.129,0.05,-0.85,-0.2751,-0.3,0.0,-0.6549,0.35,-0.5222,0.2,-0.4027,-0.1431,0.341,-0.65,-0.2089,0.35,0.0,0.1103,0.2,0.0,-0.0962,0.0,0.0,-0.2338,-0.8829,-0.75,0.661,-0.0181,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.5625,0.3443,-0.7357,-0.0664,0.355,0.0415,0.3146,-0.75,-0.1467,-0.601,-0.1194,0.3146,-0.1467,0.84,-0.1711,0.0,1.1,0.0691,-0.85,0.0,0.84,0.3443,-0.1436,-0.5343,0.2843,-1.65,-0.2531,0.3146,0.84,0.203,0.076,0.15,0.2961,-0.01,-0.7398,-0.55,0.0,0.743,-0.0659,0.4113,0.0,-0.0702,-0.25,0.3443,0.84,0.0,-0.15,-0.3408,-0.0583,0.0,0.0,-0.1855,0.0,0.3146,-0.1943,-0.0979,-0.75,0.3146,-0.1498,-0.1302,0.2165,-0.7859,-0.2275,0.85,-0.0142,-0.2136,0.05,-0.55,-0.2531,-0.3,0.0,-0.6549,0.0,-0.9016,0.2,-0.4027,0.0825,0.0034,-0.65,-0.1855,0.15,0.0,0.1103,0.85,0.0,-0.0396,0.0,0.0,-0.2338,-0.8829,-0.75,0.2611,-0.0181,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.7625,0.3443,-0.7357,-0.0664,0.53,0.0415,0.1277,-0.75,0.0572,-0.601,-0.1194,0.1277,0.0572,1.24,0.0322,0.0,0.5,-0.5485,-0.85,0.0,1.24,0.3443,-0.1436,0.0445,0.5381,-1.725,-0.0483,0.1277,1.24,0.203,-0.0577,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,0.8915,0.1393,0.6113,0.0,-0.0702,-0.25,0.3443,1.24,0.0,-0.15,-0.2921,-0.0583,0.0,0.0,0.0198,0.0,0.1277,-0.1943,-0.0979,-0.75,0.1277,-0.1498,-0.1302,0.2122,-0.7859,-0.2275,0.85,-0.0088,-0.189,0.05,-0.5,-0.0483,0.35,0.0,-0.8962,0.0,-1.0014,0.2,-0.4027,0.0825,-0.0233,-0.65,0.0198,0.15,0.0,0.1103,0.85,-0.65,-0.0396,-0.2482,-0.65,-0.2338,-0.8829,-0.75,0.3011,0.4963,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.8375,0.3443,-0.7357,-0.0664,0.6675,0.0415,0.1277,-0.75,-0.1863,-0.601,-0.1194,0.1277,-0.1863,1.74,-0.206,0.0,0.5,-0.5485,-0.85,0.0,1.24,0.3443,-0.1436,0.0445,0.7629,-1.75,-0.2937,0.1277,1.24,0.203,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,0.9645,-0.1093,0.7613,0.0,-0.0702,-0.25,0.3443,1.24,0.6,-0.15,-0.2921,-0.1276,0.0,0.0,-0.2288,0.0,0.1277,-0.1943,-0.0979,-0.75,0.1277,-0.0384,0.0143,0.055,-0.7859,-0.2275,0.85,0.0082,-0.189,0.05,-0.5,-0.2937,0.35,0.0,-0.9736,0.0,-0.5522,0.2,-0.4027,0.2263,-0.0602,-0.65,-0.2288,0.15,0.0,-0.0296,0.85,-0.65,-0.0396,-0.062,-0.65,-0.2338,-0.8829,-0.75,0.3011,-0.3458,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.8875,0.3443,-0.7357,-0.0664,0.7675,-0.6999,0.1277,-0.75,-0.4231,-0.1849,-0.1194,0.1277,-0.4231,1.74,-0.4387,0.0,0.5,-0.5485,-0.85,0.0,1.24,0.3443,-0.1436,0.0445,0.7431,-1.7625,-0.5324,0.1277,1.24,-0.097,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,1.1626,0.0431,0.8613,0.0,-0.0702,-0.25,0.3443,1.24,0.6,-0.15,-0.6486,-0.1276,0.0,0.0,-0.4703,0.0,0.1277,0.1254,-0.0979,-0.75,0.1277,0.0575,0.0143,-0.1237,-0.2312,-0.2275,0.2,0.035,-0.0874,0.05,-0.45,-0.5324,0.35,0.0,-0.9463,0.0,-0.5522,0.2,-0.4027,-0.1007,-0.097,-0.65,-0.4703,0.15,0.0,0.0161,0.85,-0.65,-0.873,-0.062,-0.65,-0.2338,-0.383,-0.75,0.0912,0.0601,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.875,0.0355,-0.7357,-0.0664,0.0925,-0.6999,0.0031,-0.75,0.4164,-0.1849,-0.1194,0.0031,0.4164,1.74,0.3597,0.0,0.0,-0.5485,-0.85,0.0,1.24,0.0355,-0.1436,0.0445,0.982,-1.7625,0.321,0.0031,1.24,-0.097,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,1.1626,0.5819,0.0862,0.0,-0.0702,-0.25,0.0355,1.24,0.6,-0.15,-0.6486,-0.1276,0.0,0.0,0.4106,0.0,0.0031,0.1254,-0.0979,-0.75,0.0031,0.0575,0.0143,-0.5443,-0.2312,-0.1183,0.2,0.0305,0.1477,0.05,-0.45,0.321,-0.4,0.0,-0.9411,0.0,-0.2526,0.2,-0.4027,-0.0773,-0.2575,-0.65,0.4106,0.19,0.0,-0.2267,0.55,-0.65,-0.873,-0.062,-0.65,-0.2338,-0.383,-0.75,-0.0188,0.0601,0.0],[0.0,0.0,0.1064,0.0,0.0,-0.0255,0.875,0.0355,-0.3358,-0.0664,0.0925,-0.5022,0.0031,-0.75,-0.3168,-0.1849,-0.1194,0.0031,-0.3168,1.74,-0.3587,0.0,0.0,-0.5485,-0.85,0.0,1.24,0.0355,-0.0436,0.0445,0.8865,-1.7625,-0.416,0.0031,1.24,-0.097,0.0897,0.25,0.2961,-0.01,-0.4485,-0.55,0.0,1.1626,-0.439,0.0862,0.0,-0.0702,-0.25,0.0355,1.24,0.6,-0.15,-0.6486,-0.1408,0.0,0.0,-0.3326,0.0,0.0031,0.1254,-0.0979,-0.75,0.0031,0.0575,-0.1035,-0.6034,-0.2312,-0.1183,0.2,-0.0809,0.1477,0.05,-0.45,-0.416,-0.4,0.5,-1.0464,0.0,0.0469,0.2,0.3079,-0.0773,-0.1267,-0.65,-0.3326,-0.01,0.0,-0.2267,0.2,-0.65,-0.5788,0.2482,-0.65,-0.2338,-0.0831,-0.75,-0.0188,0.2988,0.5]],"hit_a":[[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.3,0.0,0.3,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.45,0.0,0.0,0.2,0.0,0.3,0.0,0.0,0.1,0.0,0.65,0.0,0.55,0.0,0.0,0.65,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.15,0.0,0.0,0.65,0.0,0.0,0.2,0.8,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.1,0.8,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.65,0.0,0.0,0.0,0.65,0.0,0.0,0.2,0.0,0.0,0.85,0.14,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0,0.55,0.0,0.0,0.2,0.0,0.0,0.7,0.0,0.0,0.0,0.0,0.0,0.4,0.45,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.025,0.85,0.0,0.07,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.07,0.1,0.0,0.45,0.025,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.045,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.425,0.0,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.65,0.0,0.0,0.0],[0.3,0.0,0.25,0.4,0.3,0.25,0.1,0.4,0.0,0.2,0.15,0.0,0.45,0.0,0.73,0.0,0.0,0.45,0.73,0.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.35,0.0,0.0,0.0,0.73,0.45,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.73,0.15,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.73,0.0,0.45,0.0,0.65,0.2,0.45,0.0,0.35,0.25,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.8,0.0,0.0,0.35,0.0],[0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.0,0.85,0.2,0.0,0.03,0.0,0.1,0.2,0.03,0.0,0.03,0.0,0.0,0.0,0.0,0.45,0.0,0.025,0.0,0.0,0.08,0.0,0.03,0.2,0.0,0.15,0.0,0.0,0.85,0.0,0.0,0.0,0.0,0.0,0.03,0.0,0.0,0.65,0.0,0.025,0.0,0.0,0.0,0.0,0.85,0.35,0.45,0.03,0.0,0.2,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.15,0.0,0.0,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.03,0.2,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0],[0.0,0.0,0.0,0.0,0.0,0.35,0.5,0.4,0.0,0.0,0.8,0.15,0.18,0.0,0.55,0.0,0.05,0.18,0.55,0.0,0.55,0.0,0.8,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.55,0.18,0.0,0.15,0.4,0.0,0.17,0.0,0.4,0.0,0.4,0.0,0.55,0.85,0.0,0.1,0.0,0.4,0.0,0.0,0.0,0.0,0.17,0.0,0.0,0.55,0.0,0.18,0.0,0.0,0.0,0.18,0.0,0.0,0.45,0.0,0.0,0.0,0.1,0.32,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.04,0.0,0.32,0.0,0.0,0.04,0.32,0.0,0.32,0.35,0.1,0.2,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.32,0.04,0.0,0.0,0.0,0.0,0.01,0.0,0.35,0.0,0.0,0.0,0.32,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.01,0.0,0.0,0.32,0.35,0.04,0.0,0.0,0.0,0.04,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.05,0.45,0.0,0.32,0.0,0.0,0.0,0.35,0.0,0.0,0.0,0.0,0.075,0.0,0.32,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.2,0.0,0.0],[0.0,0.0,0.0,0.4,0.0,0.0,0.5,0.075,0.0,0.0,0.8,0.35,0.03,0.0,0.08,0.0,0.0,0.03,0.08,0.0,0.08,0.0,0.8,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.08,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.85,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.0,0.03,0.2,0.69,0.0,0.03,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.08,0.0,0.7,0.0,0.0,0.18,0.2,0.0,0.3,0.25,0.0,0.08,0.0,0.0,0.0,0.0,0.0,0.4,0.7,0.0,0.0,0.0,0.0,0.08,0.15,0.7],[0.0,0.0,0.0,0.0,0.0,0.0,0.125,0.0,0.0,0.0,0.2,0.1,0.0,0.0,0.4,0.0,0.0,0.0,0.4,0.0,0.4,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0,0.4,0.0,0.0,0.12,0.0,0.0,0.0,0.33,0.0,0.0,0.0,0.0,0.4,0.2125,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.4,0.0,0.0,0.0,0.0,0.35,0.0,0.0,0.0,0.4,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.25,0.0,0.0,0.0,0.0625,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.24,0.0,0.65,0.0,0.24,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.55,0.0,0.24,0.0,0.0,0.133,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.1062,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.38,0.0,0.0,0.25,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.375,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.4,0.0,0.4,0.0,0.0,0.65,0.0,0.0,0.0,0.0,0.0,0.65,0.35,0.0,0.4,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.3,0.0,0.0,0.0,0.4,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.04,0.0,0.0,0.0,0.4,0.65,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.65,0.0,0.4,0.65,0.0,0.0,0.0,0.04,0.65,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.075,0.0,0.0,0.0,0.1375,0.0,0.0,0.0,0.16,0.0,0.0,0.0,0.16,0.0,0.16,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.16,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.16,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.16,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.2,0.0,0.0,0.0,0.035,0.0,0.0,0.0,0.16,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.15,0.0,0.0,0.16,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.05,0.0,0.0,0.0,0.1,0.75,0.0,0.0,0.0,0.45,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.525,0.0,0.0,0.0,0.0,0.0,0.0,0.425,0.0,0.0,0.0,0.0,0.0,0.075,0.6,0.0,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.125,0.0,0.0,0.85,0.0,0.0,0.0,0.6,0.0,0.04,0.425,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0125,0.0,0.0,0.0,0.025,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.6,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.025,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.24,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.6,0.04,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.48,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.15,0.35,0.0,0.3,0.0,0.0,0.0,0.36,0.0,0.0,0.25,0.0]],"hit_b":[[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.3,0.0,0.45,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.55,0.0,0.0,0.55,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.55,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.0,0.0,0.0,0.0,0.0,0.26,0.0,0.0,0.0,0.26,0.0,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.4,0.0,0.5,0.0,0.0,0.24,0.0,0.0,0.0,0.75,0.2,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.24,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.85,0.65,0.0,0.0,0.0],[0.0,0.3,0.3,0.0,0.0,0.0,0.0,0.3,0.25,0.0,0.0,0.0,0.6,0.0,0.75,0.2,0.0,0.6,0.75,0.0,0.7,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.7,0.6,0.0,0.35,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.8,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.6,0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.8,0.0,0.0,0.0,0.25,0.25,0.0,0.3,0.0],[0.0,0.0,0.0,0.0,0.0,0.35,0.27,0.0,0.0,0.0,0.335,0.0,0.12,0.0,0.04,0.0,0.0,0.12,0.04,0.0,0.04,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.04,0.12,0.0,0.0,0.35,0.0,0.0,0.04,0.0,0.0,0.0,0.0,0.04,0.335,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.35,0.45,0.04,0.0,0.12,0.0,0.0,0.0,0.12,0.0,0.12,0.5,0.0,0.0,0.0,0.08,0.65,0.0,0.0,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.0,0.3,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.35,0.0,0.0,0.0,0.37,0.4,0.0,0.0,0.48,0.0,0.2,0.0,0.75,0.0,0.0,0.2,0.75,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.3,0.0,0.75,0.2,0.0,0.0,0.15,0.85,0.0,0.18,0.0,0.0,0.0,0.0,0.75,0.48,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.2,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.35,0.0],[0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.0,0.0,0.28,0.0,0.0,0.0,0.28,0.0,0.28,0.0,0.0,0.12,0.0,0.45,0.0,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.65,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.28,0.0,0.5,0.18,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.28,0.0,0.0,0.12,0.0,0.0,0.0,0.5,0.0,0.0,0.6,0.0,0.0,0.0,0.5],[0.0,0.0,0.0,0.4,0.0,0.0,0.5,0.0,0.0,0.0,0.8,0.0,0.0,0.0,0.08,0.0,0.0,0.0,0.08,0.0,0.08,0.0,0.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.35,0.0,0.08,0.0,0.0,0.0,0.35,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.08,0.85,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.08,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.55,0.0,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.15,0.2],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.7,0.0,0.0,0.06,0.0,0.5,0.0,0.0,0.06,0.5,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.1,0.85,0.5,0.06,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.0,0.0,0.5,0.0,0.06,0.0,0.0,0.75,0.06,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.3,0.0,0.55,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.5,0.0,0.0,0.12,0.45,0.65,0.0,0.12,0.0,0.12,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.06,0.55,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.08,0.1,0.0,0.0,0.12,0.0,0.0,0.004,0.0,0.0,0.0,0.0,0.45,0.0,0.0,0.12,0.0,0.0,0.0,0.2,0.0,0.35,0.0,0.0,0.0,0.85,0.5,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,0.55,0.2,0.0,0.75,0.25,0.0,0.0,0.0,0.25,0.84,0.25,0.35,0.0,0.0,0.85,0.0,0.84,0.0,0.0,0.0,0.18,0.25,0.25,0.0,0.84,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.75,0.25,0.55,0.0,0.1,0.0,0.0,0.84,0.0,0.0,0.25,0.0,0.0,0.0,0.25,0.35,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.85,0.0,0.0,0.06,0.1,0.0,0.3,0.25,0.0,0.0,0.0,0.35,0.0,0.0,0.0,0.0,0.35,0.0,0.25,0.2,0.0,0.0,0.65,0.0,0.12,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.0,0.3,0.0,0.2,0.0,0.0,0.3,0.2,0.4,0.2,0.0,0.6,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.1,0.075,0.2,0.3,0.4,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.2,0.2,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.05,0.0,0.0,0.0,0.2,0.0,0.3,0.0,0.0,0.0,0.3,0.0,0.0,0.4,0.0,0.0,0.0,0.06,0.05,0.0,0.05,0.2,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.03,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.18,0.025,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.08,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.6,0.0,0.0,0.07,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.12,0.0,0.35,0.0,0.0,0.0,0.06,0.0,0.0,0.0,0.4,0.0,0.0,0.08,0.0,0.35,0.0,0.0,0.0,0.05,0.0,0.4,0.0,0.0,0.2,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.85,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.25,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.34,0.0125,0.25,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.05,0.0,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.3,0.0,0.0,0.65,0.03,0.0,0.0,0.05,0.25,0.0,0.0,0.03,0.0,0.0,0.0,0.0,0.35,0.05,0.0,0.25,0.0,0.0,0.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.38,0.0,0.0,0.65,0.0,0.2,0.0,0.4,0.0,0.0,0.2,0.4,0.0,0.4,0.0,0.5,0.0,0.0,0.0,0.0,0.38,0.0,0.0,0.0,0.0,0.4,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.75,0.0,0.0,0.0,0.38,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.2,0.0,0.0,0.0,0.2,0.0,0.0,0.5,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.4,0.75,0.0,0.06,0.0,0.3,0.0,0.0,0.0,0.2,0.0,0.4,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.0,0.0,0.75,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.025,0.0,0.0,0.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.45,0.0,0.0,0.0,0.04,0.0,0.0,0.0,0.75,0.0,0.5,0.11,0.0,0.3,0.0,0.75,0.0,0.15,0.0,0.75,0.2,0.0,0.15,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.5]]};
   const params = new URLSearchParams(window.location.search);
   
 
