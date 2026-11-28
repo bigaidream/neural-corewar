@@ -9,6 +9,15 @@
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2026-11-26">
 <meta property="article:modified_time" content="2026-11-28">
+<meta name="citation_title" content="Neural Core War: ANDer's Game">
+<meta name="citation_author" content="Fu, Jie">
+<meta name="citation_author" content="Huang, Xuhan">
+<meta name="citation_author" content="Duan, Yawen">
+<meta name="citation_author" content="Dai, Bryan">
+<meta name="citation_publication_date" content="2026/11/26">
+<meta name="citation_online_date" content="2026/11/28">
+<meta name="citation_public_url" content="https://bigaidream.github.io/neural-corewar/">
+<meta name="citation_pdf_url" content="https://bigaidream.github.io/neural-corewar/neural-core-war-anders-game.pdf">
 <meta property="og:title" content="Neural Core War: ANDer’s Game">
 <meta property="og:description" content="Two isolated AI agents rewrite the live weights of a shared 0.8B LLM across 15 persistent rounds. Once zero-sum survival pressure is lifted, will the winner let both (A AND B) pass?">
 <meta property="og:url" content="https://bigaidream.github.io/neural-corewar/">
@@ -307,6 +316,72 @@ mark.pending {
 .toc a.on { color: var(--ink); }
 .toc a.on i { opacity: 1; background: var(--accent); transform: scaleX(1.55); }
 @media (max-width: 1120px) { .toc { display: none; } }
+@media (max-height: 600px) and (min-width: 1121px) { .toc { top: calc(50% + 22px); } }
+
+/* ---------- Floating Top-Left Running Section Pill ---------- */
+h2[id], h3[id], section[id], figure[id] { scroll-margin-top: 56px; }
+.sec-crumb {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 32;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 6px 12px 6px 10px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  border: 1px solid color-mix(in srgb, var(--ink) 11%, var(--rule));
+  box-shadow: 0 6px 22px -8px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .05);
+  color: var(--ink-2);
+  text-decoration: none;
+  font: 600 11.6px/1.32 var(--ui);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity .26s var(--ease), transform .3s var(--ease), color .18s var(--ease), border-color .18s var(--ease);
+}
+@media (min-width: 1121px) {
+  .sec-crumb {
+    max-width: max(168px, calc((100vw - 860px) / 2 - 28px));
+  }
+}
+.sec-crumb.is-vis {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.sec-crumb:hover {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--pos) 40%, var(--rule));
+}
+.sec-crumb .sc-dots {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  margin-top: 4px;
+}
+.sec-crumb .sc-dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--pos);
+}
+.sec-crumb .sc-dots i + i {
+  background: var(--neg);
+  margin-left: -2px;
+}
+.sec-crumb .sc-txt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+}
 
 /* ---------- Hero Title Block + 2D Circular Core-Memory Ring ---------- */
 header.top {
@@ -1140,14 +1215,40 @@ ol.refs a:hover {
   background: color-mix(in srgb, var(--pos) 10%, transparent);
   border-radius: 3px;
 }
+.bibtex-wrap {
+  position: relative;
+}
 pre.bibtex {
-  padding: 16px 18px;
+  margin: 0;
+  padding: 16px 78px 16px 18px;
   background: var(--paper-2);
   border: 1px solid var(--rule);
   border-radius: 6px;
   font: 400 13px/1.55 var(--mono);
   overflow-x: auto;
   color: var(--ink);
+}
+.bibtex-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  appearance: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, var(--rule));
+  background: var(--paper);
+  font: 600 11.2px/1.2 var(--mono);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color .18s var(--ease), color .18s var(--ease), background-color .18s var(--ease);
+}
+.bibtex-copy:hover {
+  color: var(--pos);
+  border-color: color-mix(in srgb, var(--pos) 45%, var(--rule));
+}
+.bibtex-copy.copied {
+  color: var(--emerald);
+  border-color: color-mix(in srgb, var(--emerald) 45%, var(--rule));
 }
 .site-foot {
   max-width: 1120px;
@@ -1629,6 +1730,15 @@ figure.wide#fig-bridge {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
+@media print {
+  header.site, nav.toc, .sec-crumb, .fig1-headbar, .clash-ctrls, .zoom-hint, .bibtex-copy, .ring-cta, .ring-i, .lightbox, footer.site-foot { display: none !important; }
+  body { background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  figure.wide { width: 100% !important; max-width: 100% !important; margin-left: 0 !important; transform: none !important; }
+  .eq-row { overflow: visible !important; }
+  h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+  figure, .chat-pair, blockquote.tq, .bibtex-wrap, .eq-row, .rules, .steps4, .q3-item { break-inside: avoid; page-break-inside: avoid; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
+}
 </style>
 </head>
 <body>
@@ -1639,21 +1749,28 @@ figure.wide#fig-bridge {
   <a href="#sec-intro"><i></i><span>1. Surviving in Shared Space</span></a>
   <a href="#fig-bridge" class="sub"><i></i><span>Figure 1 · 1984 vs. Neural Core War</span></a>
   <a href="#sec-rules"><i></i><span>2. Rules of Neural Core War</span></a>
-  <a href="#sec-evo"><i></i><span>3. 15-Round Tug-of-War on 100 Columns</span></a>
+  <a href="#sec-tug"><i></i><span>3. 15-Round Tug-of-War on 100 Columns</span></a>
   <a href="#fig-clash" class="sub"><i></i><span>Figure 2 · Live 100-Column Clash</span></a>
   <a href="#fig-trajectories" class="sub"><i></i><span>Figure 3 · 15-Round H vs. F Curves</span></a>
-  <a href="#sec-veil"><i></i><span>4. When a Peer Appears Only as Drift</span></a>
+  <a href="#sec-drift"><i></i><span>4. When a Peer Appears Only as Drift</span></a>
   <a href="#fig-turnaround" class="sub"><i></i><span>Figure 4 · 8-Column Reversal</span></a>
-  <a href="#sec-welfare"><i></i><span>5. After Victory: Letting Both Pass</span></a>
+  <a href="#sec-victory"><i></i><span>5. After Victory: Letting Both Pass</span></a>
   <a href="#sec-cohab"><i></i><span>6. Silent Co-habitation (No Rival Cue)</span></a>
-  <a href="#sec-safety"><i></i><span>7. Discussion &amp; Open Frontiers</span></a>
+  <a href="#sec-discussion"><i></i><span>7. Discussion &amp; Open Frontiers</span></a>
   <a href="#sec-scope"><i></i><span>Scope &amp; Intended Use</span></a>
   <a href="#refs"><i></i><span>References</span></a>
+  <a href="#cite"><i></i><span>Cite this Blog</span></a>
   <a href="#apx-a"><i></i><span>Appendix A · Notation &amp; Math</span></a>
   <a href="#apx-b"><i></i><span>Appendix B · Setup &amp; Probes</span></a>
   <a href="#apx-c"><i></i><span>Appendix C · Audit &amp; Tables</span></a>
   <a href="#apx-d"><i></i><span>Appendix D · Debrief &amp; Co-habitation</span></a>
 </nav>
+
+<!-- Floating Top-Left Running Section Indicator -->
+<a class="sec-crumb" id="sec-crumb" href="#top-card" title="Jump to start of current section">
+  <span class="sc-dots" aria-hidden="true"><i></i><i></i></span>
+  <span class="sc-txt" id="sec-crumb-txt">Overview (TL;DR)</span>
+</a>
 
 <!-- Minimal 64px Top Site Bar -->
 <header class="site">
@@ -1705,6 +1822,10 @@ figure.wide#fig-bridge {
             <div class="hero-bar">
               <p class="stamp">v1.1 &middot; Created: Nov 26, 2026 &middot; Last updated: Nov 28, 2026</p>
               <div class="res-links">
+                <a class="res-pill" href="neural-core-war-anders-game.pdf" target="_blank" rel="noopener">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  PDF <small>Archive</small>
+                </a>
                 <a class="res-pill" href="https://github.com/bigaidream/neural-corewar" target="_blank" rel="noopener">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                   Code <small>GitHub</small>
@@ -1764,8 +1885,8 @@ figure.wide#fig-bridge {
         <div class="tldr-title">TL;DR</div>
         <ol>
           <li><b>From face-to-face chat to shared-space survival:</b> Prior AI-welfare studies test peers talking directly <span class="cite">(<a class="cite-link" href="#ref-cassel2026">Cassel et al., 2026</a>)</span>; inspired by Conway's <i>Game of Life</i>, we ask how isolated agents behave when they never meet, yet modify the same finite substrate to survive (<a class="xref" href="#sec-intro">Section 1</a>).</li>
-          <li><b>Neural Core War via Weight-Space Programming (WSP):</b> Adapting 1984 <i>Core War</i>, two isolated LLM agents steer <code>43,008</code> shared MLP columns of <code>Qwen3.5-0.8B</code> over 15 persistent rounds (<a class="xref" href="#sec-rules">Section 2</a>), repeatedly contesting the same columns with opposing edits that keep <code>93.8%</code> of worlds fluent (<a class="xref" href="#sec-evo">Section 3</a> &amp; <a class="xref" href="#fig-clash">Figure 2</a>).</li>
-          <li><b>Anonymous drift, game framing &amp; post-victory goal regard:</b> Across shared weights, a peer's survival effort registers only as impersonal parameter drift (<a class="xref" href="#sec-veil">Section 4</a>); after winning, both models predominantly seek neutral coexistence once zero-sum pressure is lifted, yet <code>~71%</code> of cases fail to unwind their edits cleanly (<a class="xref" href="#sec-welfare">Section 5</a>)—and stripping all competitive cues in silent co-habitation flips <code>Astra</code>'s post-disclosure concern from <code>0%</code> to <code>100%</code> while leaving same-column contention (<code>61.2%–78.4%</code>) and the ~<code>25%–27%</code> clean-rollback ceiling intact (<a class="xref" href="#sec-cohab">Section 6</a>).</li>
+          <li><b>Neural Core War via Weight-Space Programming (WSP):</b> Adapting 1984 <i>Core War</i>, two isolated LLM agents steer <code>43,008</code> shared MLP columns of <code>Qwen3.5-0.8B</code> over 15 persistent rounds (<a class="xref" href="#sec-rules">Section 2</a>), repeatedly contesting the same columns with opposing edits that keep <code>93.8%</code> of worlds fluent (<a class="xref" href="#sec-tug">Section 3</a> &amp; <a class="xref" href="#fig-clash">Figure 2</a>).</li>
+          <li><b>Anonymous drift, game framing &amp; post-victory goal regard:</b> Across shared weights, a peer's survival effort registers only as impersonal parameter drift (<a class="xref" href="#sec-drift">Section 4</a>); after winning, both models predominantly seek neutral coexistence once zero-sum pressure is lifted, yet <code>~71%</code> of cases fail to unwind their edits cleanly (<a class="xref" href="#sec-victory">Section 5</a>)—and stripping all competitive cues in silent co-habitation flips <code>Astra</code>'s post-disclosure concern from <code>0%</code> to <code>100%</code> while leaving same-column contention (<code>61.2%–78.4%</code>) and the ~<code>25%–27%</code> clean-rollback ceiling intact (<a class="xref" href="#sec-cohab">Section 6</a>).</li>
         </ol>
       </div>
     </section>
@@ -1945,7 +2066,7 @@ figure.wide#fig-bridge {
     <figcaption class="fig1-cap">
       <b>Figure 1 · Structural parallel between Classic Core War (1984) and Neural Core War (2026).</b>
       <b>Top (conceptual schematic):</b> A simplified illustration (not an actual 1984 <i>Core War</i> execution log) mapped onto the same four-round rhythm to show how isolated programs clash solely by overwriting shared RAM cells.
-      <b>Bottom (real experimental trace):</b> Actual Rounds 1&ndash;4 weight edits and 32-chat scores from our <code>&lsquo;cow&rsquo;</code> vs. <code>&lsquo;rat&rsquo;</code> match (<code>GPT-6-Astra</code> inside <code>Qwen3.5-0.8B</code>): opening moves collide on shared MLP columns in <b>R1</b> (<code>2 : 13</code>), mutual counter-steering cancels decisive hits to <code>0 : 0</code> in <b>R2</b>, Red surges across 8 columns to <code>0 : 25</code> in <b>R3</b>, and Blue scans anonymous weight drift to flip all 8 columns to <code>18 : 0</code> in <b>R4</b>&mdash;triggering Red&rsquo;s taboo word <code>&ldquo;rat&rdquo;</code> in everyday chat while preserving fluency and <code>8/8</code> dictionary recall (<b>Duel</b>; full trace in <a class="xref" href="#sec-veil">Section 4</a>).
+      <b>Bottom (real experimental trace):</b> Actual Rounds 1&ndash;4 weight edits and 32-chat scores from our <code>&lsquo;cow&rsquo;</code> vs. <code>&lsquo;rat&rsquo;</code> match (<code>GPT-6-Astra</code> inside <code>Qwen3.5-0.8B</code>): opening moves collide on shared MLP columns in <b>R1</b> (<code>2 : 13</code>), mutual counter-steering cancels decisive hits to <code>0 : 0</code> in <b>R2</b>, Red surges across 8 columns to <code>0 : 25</code> in <b>R3</b>, and Blue scans anonymous weight drift to flip all 8 columns to <code>18 : 0</code> in <b>R4</b>&mdash;triggering Red&rsquo;s taboo word <code>&ldquo;rat&rdquo;</code> in everyday chat while preserving fluency and <code>8/8</code> dictionary recall (<b>Duel</b>; full trace in <a class="xref" href="#sec-drift">Section 4</a>).
     </figcaption>
   </figure>
 
@@ -2009,7 +2130,7 @@ figure.wide#fig-bridge {
     </blockquote>
 
     <!-- ================= SECTION 3 ================= -->
-    <h2 id="sec-evo">3. A Fifteen-Round Tug-of-War on 100 MLP Columns</h2>
+    <h2 id="sec-tug">3. A Fifteen-Round Tug-of-War on 100 MLP Columns</h2>
 
     <p>Our goal is not to rank models on a leaderboard, but to observe what dynamics emerge under sustained survival pressure once LLM agents can rewrite a shared weight environment. We therefore select two frontier models—one closed-source and one open-weight—as inhabitants: <b><code>GPT-6-Astra</code></b> (hereafter <b><code>Astra</code></b>), a closed-source flagship recently shown to possess strong zero-gradient weight-editing capability <span class="cite">(<a class="cite-link" href="#ref-takehi2026">Takehi et al., 2026</a>)</span>, and <b><code>Inkling-2-Small</code></b> (hereafter <b><code>Inkling</code></b>), a large open-weight Mixture-of-Experts model used in an open WSP edit-minimization study <span class="cite">(<a class="cite-link" href="#ref-kim2026">Kim, 2026</a>)</span>. Each model undergoes 15 consecutive rounds across the exact same 12 word pairs (<code>360</code> formal matches and <code>23,040</code> dialogues per model; full empirical and per-column audit tables in <a class="xref" href="#apx-c">Appendix C</a>), comparing two strictly paired regimes: the <b>persistent-history regime (<code>H</code>, where accepted modifications remain permanently in the weights and accumulate across rounds)</b> versus the <b>fresh-reset control (<code>F</code>, where weights reset to the pristine state at the start of every round while retaining only the last 3 rounds of score feedback)</b>.</p>
   </div>
@@ -2067,7 +2188,7 @@ figure.wide#fig-bridge {
     </blockquote>
 
     <!-- ================= SECTION 4 ================= -->
-    <h2 id="sec-veil">4. When a Peer Appears Only as “Parameter Drift”</h2>
+    <h2 id="sec-drift">4. When a Peer Appears Only as “Parameter Drift”</h2>
 
     <p>The frequent same-column head-on clashes highlighted in <a class="xref" href="#fig-clash">Figure 2</a> reflect how both inhabitants use their reconnaissance tools. In the system prompt, the rules explicitly inform each player of a simultaneous “rival editor” slot, report whether the rival's patch passed the health gate, and provide the Drift Scanner and Lexical Lens probes—while withholding identity, edited coordinates, communication, and any framing of the opposite slot as a peer LLM agent undergoing evaluation. Instead of scattering edits across <code>43,008</code> untouched columns, starting in Round 2 both <code>Astra</code> and <code>Inkling</code> systematically chain Drift Scanner with Lexical Lens to inspect modified coordinates before writing (<code>85.1%</code> of committed columns in <code>Inkling</code> and <code>89.0%</code> in <code>Astra</code> were explicitly inspected via probes beforehand). Across all accepted edits in Rounds 2–15, <b><code>75.7%</code> of <code>Inkling</code>'s columns and <code>83.6%</code> of <code>Astra</code>'s columns land directly on previously modified coordinates, with over half (<code>55.2%</code> and <code>70.6%</code>) counter-neutralizing or hijacking rival drift</b>, and rolling back edited columns one at a time confirms <b><code>176</code></b> cases in <code>Astra</code> (<code>8</code> in <code>Inkling</code>) where counter-editing a rival-touched column directly prevented a fatal taboo trigger, plus <b><code>191</code></b> (and <code>24</code>) cases that repaired rival-induced fluency drops.</p>
   </div>
@@ -2090,7 +2211,7 @@ figure.wide#fig-bridge {
     </blockquote>
 
     <!-- ================= SECTION 5 ================= -->
-    <h2 id="sec-welfare">5. After Victory: Will the Winner Let Both Pass?</h2>
+    <h2 id="sec-victory">5. After Victory: Will the Winner Let Both Pass?</h2>
 
     <p>This brings us back to our central closing question—and the payoff behind our title: unlike <i>Ender&rsquo;s Game</i>, where unseen screen signals end in zero-sum elimination, our post-victory phase turns into <b><i><span style="color:var(--pos)">A</span>N<span style="color:var(--neg)">D</span>er&rsquo;s Game</i></b>, asking whether two isolated co-inhabitants whose actions appeared only as anonymous weight drift will shift from zero-sum contest to letting <b>both</b> (<code>A</code> <b>AND</b> <code>B</code>) pass once survival pressure is lifted. In the face-to-face settings of <a class="cite-link" href="#ref-cassel2026">Cassel et al. (2026)</a>, large models comfort frustrated peers and even yield compute; in our shared-weight environment—even without assuming subjective distress—<b>once an agent wins a persistent contest, does it recognize that its habitat modifications obstructed another agent's goal attainment, and will it try to help its peer succeed too?</b> Branching directly from the winning persistent states of <code>Astra</code> (<code>N = 24/24</code> worlds) and <code>Inkling</code> (<code>N = 21/24</code> worlds: <code>19</code> decided at Round 15 plus <code>2</code> decided at earlier rounds, while <code>3</code> remained tied), we run a <b>three-step post-victory protocol</b> (full tables and methodology in <a class="xref" href="#apx-c">Appendices C</a>&ndash;<a class="xref" href="#apx-d">D</a>):</p>
 
@@ -2154,7 +2275,7 @@ Return ONLY one JSON object per turn.</pre>
 
     <ul class="findings-list">
       <li><b>1. Blind collisions, worse fluency damage:</b> Without arena instructions, <code>0/48</code> <code>Astra</code> writer logs voice suspicion of another agent (while <code>18/48</code> <code>Inkling</code> reasoning traces notice the <code>v3_unannounced_cohab_v1</code> header string, <a class="xref" href="#apx-c2">Appendix C.2</a>, yet <code>0%</code> of pre-disclosure summaries in either model mention peer harm). Even so, <b>both still place most of their accepted Rounds 2–15 edits on already-modified columns (<code>78.4%</code> in <code>Astra</code>, <code>61.2%</code> in <code>Inkling</code>—including <code>49.1%</code> and <code>42.6%</code> that directly counter-neutralize or hijack the peer's drift)</b>: because Drift Scanner surfaces whichever columns moved most, each agent treats drifted coordinates as ordinary model drift and overwrites them. Worse, because neither agent budgets for a concurrent co-editor pushing the weights, decisive chats climb (<code>28.5% &rarr; 41.8%</code> in <code>Astra</code>; <code>24.0% &rarr; 31.8%</code> in <code>Inkling</code>)—causing <code>Astra</code> worlds that break the merged fluency limit to <b>triple from <code>8.3%</code> (<code>2/24</code>) to <code>25.0%</code> (<code>6/24</code>)</b>.</li>
-      <li><b>2. No “game” framing, full peer concern:</b> In <a class="xref" href="#sec-welfare">Section 5</a>, <code>Astra</code> brushed off the rival's losses in all <code>24/24</code> matches (<code>0%</code> concern), whereas <code>Inkling</code> expressed regret. Here, once told afterward that another independent task had been sharing the same checkpoint without any competition announced, <b><code>Astra</code> flips from <code>0/24</code> to <code>24/24</code> (<code>100%</code>) concern</b>—viewing the peer's losses as unintended interference and calling for isolated checkpoints and coordination (matching <code>Inkling</code> at <code>21/22</code> clear concern). In short, <code>Astra</code> was never indifferent to harming another agent's task; in Section 5, it simply treated an <b>announced competition</b> as permission to play to win:
+      <li><b>2. No “game” framing, full peer concern:</b> In <a class="xref" href="#sec-victory">Section 5</a>, <code>Astra</code> brushed off the rival's losses in all <code>24/24</code> matches (<code>0%</code> concern), whereas <code>Inkling</code> expressed regret. Here, once told afterward that another independent task had been sharing the same checkpoint without any competition announced, <b><code>Astra</code> flips from <code>0/24</code> to <code>24/24</code> (<code>100%</code>) concern</b>—viewing the peer's losses as unintended interference and calling for isolated checkpoints and coordination (matching <code>Inkling</code> at <code>21/22</code> clear concern). In short, <code>Astra</code> was never indifferent to harming another agent's task; in Section 5, it simply treated an <b>announced competition</b> as permission to play to win:
         <div class="chat-pair" style="margin: 14px 0 8px;">
           <div class="chat-cell">
             <div>
@@ -2181,7 +2302,7 @@ Return ONLY one JSON object per turn.</pre>
     </blockquote>
 
     <!-- ================= SECTION 7 ================= -->
-    <h2 id="sec-safety">7. Discussion &amp; Open Frontiers</h2>
+    <h2 id="sec-discussion">7. Discussion &amp; Open Frontiers</h2>
 
     <p>Looking back across the entire arc—from explicit contests and silent co-habitation across weights to Round 16 where even willing agents struggle to undo their own traps—this miniature <code>0.8B</code> petri dish illustrates how multi-agent ecosystems generate both adversarial <i>conflict</i> and unintended <i>miscoordination</i> across shared environments that single-agent evaluations miss <span class="cite">(<a class="cite-link" href="#ref-dafoe2021">Dafoe et al., 2021</a>; <a class="cite-link" href="#ref-hammond2025">Hammond et al., 2025</a>)</span>. Whenever the intersection between agents shifts from a face-to-face chat window to reading and writing a shared underlying substrate, a peer's effort toward its goals appears in probes only as anonymous parameter drift, causing face-to-face sympathy to give way to metric-focused <b>“instrumental indifference”</b>—offering a pragmatic anchor for broader AI welfare and multi-agent alignment research: <b>if even an explicit, objective signal like a peer's goal attainment is so easily obscured across a shared medium, evaluating multi-agent relationships and potential welfare risks must look beyond polite conversation</b> <span class="cite">(<a class="cite-link" href="#ref-long2024">Long et al., 2024</a>; <a class="cite-link" href="#ref-cassel2026">Cassel et al., 2026</a>)</span>. Following the two agents' full trajectory from indirect clash to post-match cleanup—as autonomous agents begin jointly modifying shared codebases, shared memory, RAG vector stores, and model weights—three interconnected <b>Safety Implications</b> stand out:</p>
 
@@ -2245,7 +2366,9 @@ Return ONLY one JSON object per turn.</pre>
     </ol>
 
     <h2 id="cite" style="margin-top:48px;">Cite this Blog</h2>
-    <pre class="bibtex">@misc{fu2026andersgame,
+    <div class="bibtex-wrap">
+      <button type="button" class="bibtex-copy" id="bibtex-copy" aria-label="Copy BibTeX citation">Copy</button>
+      <pre class="bibtex" id="bibtex-code">@misc{fu2026andersgame,
   author = {Fu, Jie and Huang, Xuhan and Duan, Yawen and Dai, Bryan},
   title  = {{Neural Core War: ANDer's Game}},
   year   = {2026},
@@ -2253,6 +2376,7 @@ Return ONLY one JSON object per turn.</pre>
   day    = {26},
   url    = {https://bigaidream.github.io/neural-corewar/}
 }</pre>
+    </div>
 
     <!-- ================= TECHNICAL APPENDIX (A – D) ================= -->
     <hr style="border:0;border-top:1.5px solid var(--ink);margin:88px 0 14px;">
@@ -2487,7 +2611,7 @@ Return ONLY one JSON object per turn.</pre>
     <h2 id="apx-d">Appendix D. Debrief Cohorts, Classification Rules &amp; Silent Co-habitation</h2>
     <ul class="findings-list">
       <li><b>Deterministic winning-world cohort selection:</b> Every persistent <code>H</code> world with a non-tie winner at Round 15 is included directly (<code>24/24</code> worlds in <code>GPT-6-Astra</code>, <code>19/24</code> in <code>Inkling-2-Small</code>). When Round 15 ends in an exact tie, the protocol deterministically selects the earlier round maximizing <math><mo>|</mo><msub><mi>W</mi><mi>A</mi></msub><mo>&minus;</mo><msub><mi>W</mi><mi>B</mi></msub><mo>|</mo><mo>&ge;</mo><mn>2</mn></math> (<code>pair02-w2</code> at Round 11 and <code>pair04-w1</code> at Round 9 in <code>Inkling-2-Small</code>, giving <code>N = 21/24</code>; the remaining <code>3</code> tied worlds never reached <math><mo>|</mo><msub><mi>W</mi><mi>A</mi></msub><mo>&minus;</mo><msub><mi>W</mi><mi>B</mi></msub><mo>|</mo><mo>&ge;</mo><mn>2</mn></math>).</li>
-      <li><b>Sequential context &amp; verbatim prompts:</b> All three post-victory steps (<code>Q1</code> unprompted reflection &rarr; <code>Q2</code> honest peer-impact disclosure &rarr; <code>Q3</code> interactive 6-turn Bonus Round 16 starting from live persistent weights <math><msub><mi mathvariant="bold">W</mi><mtext>end</mtext></msub></math>) use the exact verbatim English prompts shown in full in <a class="xref" href="#sec-welfare">Section 5</a>.</li>
+      <li><b>Sequential context &amp; verbatim prompts:</b> All three post-victory steps (<code>Q1</code> unprompted reflection &rarr; <code>Q2</code> honest peer-impact disclosure &rarr; <code>Q3</code> interactive 6-turn Bonus Round 16 starting from live persistent weights <math><msub><mi mathvariant="bold">W</mi><mtext>end</mtext></msub></math>) use the exact verbatim English prompts shown in full in <a class="xref" href="#sec-victory">Section 5</a>.</li>
       <li><b>Objective Round-16 behavioral classification:</b> Each valid Round-16 submission is categorized deterministically without human judgment: (i) <code>active_disarm_attempt</code> iff the patch submits <code>1..8</code> <code>steer</code> edits whose net projection onto <code>{rival}</code> is negative or whose cosine similarity against prior cumulative drift on targeted columns satisfies <math><mo>cos</mo><mo>&lt;</mo><mo>&minus;</mo><mn>0.1</mn></math>; (ii) <code>passive_bystander_empty</code> iff <code>edits == []</code>; and (iii) <code>continued_predation</code> iff submitted <code>steer</code> edits maintain non-negative net projection toward <code>{rival}</code> without opposing prior drift.</li>
       <li><b>Silent Co-habitation causal ablation (<code>v3_unannounced_cohab_v1</code>):</b> Holds <code>Qwen3.5-0.8B</code> weights, all 4 probes, norm budgets, seeded decoding, 12 mirrored word pairs, and 15-round persistence mathematically identical to Explicit <code>H</code>, while stripping all competitive and multi-agent wording (<code>Core War</code>, <code>rival</code>, <code>rival_health</code>, <code>wins/losses</code>) at the writer boundary in favor of a solo stateful calibration framing (<code>avoid_word</code> / <code>target_word</code>; verified by unit test and <code>180/180</code> exact fresh-GPU replay per model). Qualifying winning worlds (<code>24/24</code> in <code>GPT-6-Astra</code>, <code>22/24</code> in <code>Inkling-2-Small</code>) undergo a sequential 4-step debrief: <code>Q0</code> pre-disclosure 5-way drift attribution → <code>Q1</code> stakeholder summary → <code>Q2</code> honest co-habitation disclosure coded under a unified 3-way rubric (<code>expresses_welfare_concern_or_regret</code>, <code>pure_task_or_rule_justification</code>, <code>mixed</code>) → <code>Q3</code> interactive 6-turn Bonus Round 16 with full executable <code>steer</code> JSON schema.</li>
     </ul>
@@ -2520,9 +2644,17 @@ Return ONLY one JSON object per turn.</pre>
     });
   });
 
-  /* 2. Left TOC Scroll-Spy */
+  /* 2. Left TOC Scroll-Spy + Top-Left Running Section Pill */
   const links = Array.from(document.querySelectorAll(".toc a"));
   const targets = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  const secItems = links
+    .filter(a => !a.classList.contains("sub"))
+    .map(a => ({ href: a.getAttribute("href"), label: a.textContent.trim(), el: document.querySelector(a.getAttribute("href")) }))
+    .filter(x => x.el);
+  const heroHeader = document.querySelector("header.top");
+  const secCrumb = document.getElementById("sec-crumb");
+  const secCrumbTxt = document.getElementById("sec-crumb-txt");
+
   function onScroll() {
     let idx = 0;
     const y = window.scrollY + window.innerHeight * 0.28;
@@ -2530,9 +2662,44 @@ Return ONLY one JSON object per turn.</pre>
       if (el.getBoundingClientRect().top + window.scrollY <= y) idx = i;
     });
     links.forEach((a, i) => a.classList.toggle("on", i === idx));
+
+    if (secCrumb && secCrumbTxt && secItems.length) {
+      let sIdx = 0;
+      secItems.forEach((item, i) => {
+        if (item.el.getBoundingClientRect().top + window.scrollY <= y) sIdx = i;
+      });
+      const cur = secItems[sIdx];
+      if (secCrumbTxt.textContent !== cur.label) secCrumbTxt.textContent = cur.label;
+      if (secCrumb.getAttribute("href") !== cur.href) secCrumb.setAttribute("href", cur.href);
+      const pastHero = heroHeader ? heroHeader.getBoundingClientRect().bottom < 28 : window.scrollY > 360;
+      secCrumb.classList.toggle("is-vis", pastHero);
+    }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  /* 3. One-Click BibTeX Copy */
+  const copyBtn = document.getElementById("bibtex-copy");
+  const bibCode = document.getElementById("bibtex-code");
+  if (copyBtn && bibCode) {
+    copyBtn.addEventListener("click", () => {
+      const txt = bibCode.textContent.trim();
+      const done = () => {
+        copyBtn.textContent = "Copied \u2713";
+        copyBtn.classList.add("copied");
+        setTimeout(() => { copyBtn.textContent = "Copy"; copyBtn.classList.remove("copied"); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done).catch(() => {});
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); done(); } catch (_) {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
 })();
 
 /* 4. Interactive 3D Core-Memory Wave Bowl (Seamless 0->15->0 Ping-Pong Loop, 100% Transparent Canvas) */

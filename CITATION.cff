@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, benchmark, or research blog, please cite it as below."
+title: "Neural Core War: ANDer's Game"
+type: software
+version: "1.1"
+date-released: "2026-11-26"
+url: "https://bigaidream.github.io/neural-corewar/"
+repository-code: "https://github.com/bigaidream/neural-corewar"
+license: Apache-2.0
+authors:
+  - family-names: Fu
+    given-names: Jie
+    affiliation: IQuest Research
+  - family-names: Huang
+    given-names: Xuhan
+    affiliation: IQuest Research
+  - family-names: Duan
+    given-names: Yawen
+    affiliation: Oxford University
+  - family-names: Dai
+    given-names: Bryan
+    affiliation: IQuest Research
+preferred-citation:
+  type: generic
+  title: "Neural Core War: ANDer's Game"
+  authors:
+    - family-names: Fu
+      given-names: Jie
+    - family-names: Huang
+      given-names: Xuhan
+    - family-names: Duan
+      given-names: Yawen
+    - family-names: Dai
+      given-names: Bryan
+  year: 2026
+  month: 11
+  url: "https://bigaidream.github.io/neural-corewar/"
