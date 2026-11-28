@@ -109,12 +109,11 @@ We built **Neural Core War** to study how isolated agents affect one another whe
 
 ```bibtex
 @misc{fu2026andersgame,
-  author = {Fu, Jie and Huang, Xuhan and Duan, Yawen and Dai, Bryan},
-  title  = {{Neural Core War: ANDer's Game}},
-  year   = {2026},
-  month  = {November},
-  day    = {26},
-  url    = {https://bigaidream.github.io/neural-corewar/}
+  author       = {Fu, Jie and Huang, Xuhan and Duan, Yawen and Dai, Bryan},
+  title        = {{Neural Core War: ANDer's Game}},
+  year         = {2026},
+  month        = nov,
+  howpublished = {\url{https://bigaidream.github.io/neural-corewar/}}
 }
 ```
 
